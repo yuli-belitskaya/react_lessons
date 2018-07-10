@@ -103,22 +103,34 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({15:[function(require,module,exports) {
-'use strict';
+})({16:[function(require,module,exports) {
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var getName = exports.getName = function getName() {
-  return 'newModule';
+var summa = exports.summa = function summa(a, b) {
+  return a + b;
+};
+var differents = exports.differents = function differents(a, b) {
+  return a - b;
+};
+var multiplication = exports.multiplication = function multiplication(a, b) {
+  return a * b;
+};
+var division = exports.division = function division(a, b) {
+  return a / b;
 };
 },{}],4:[function(require,module,exports) {
 'use strict';
 
-var _newmodule = require('./src/newmodule');
+var _arifmetica = require('./src/arifmetica');
 
-console.log((0, _newmodule.getName)());
-},{"./src/newmodule":15}],6:[function(require,module,exports) {
+console.log((0, _arifmetica.summa)(3, 5));
+console.log((0, _arifmetica.division)(3, 5));
+console.log((0, _arifmetica.differents)(3, 5));
+console.log((0, _arifmetica.multiplication)(3, 5));
+},{"./src/arifmetica":16}],6:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
