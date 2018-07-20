@@ -10,9 +10,7 @@ class ProductCard extends Component {
                 >
                 <Image
                     title={this.props.product.title}
-                    width={this.props.product.width}
-                    height={this.props.product.height}
-                    imageUrl={this.props.product.imageUrl}
+                    image={this.props.product.image}
                 />
                 <TextBox title={this.props.product.title}/>
                 <Price price={this.props.product.price}/>

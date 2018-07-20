@@ -3,7 +3,8 @@ import React, { Component } from 'react'
 
 class Image extends Component {
     render() {
-        return <img src={this.props.imageUrl} style={{width: this.props.width, height: this.props.height}} alt={this.props.title} />
+        const { image, title } = this.props;
+        return <img src={image.imageUrl} style={{width: image.width, height: image.height}} alt={title} />
     }
 }
 
