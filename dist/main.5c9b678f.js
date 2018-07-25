@@ -19780,7 +19780,14 @@ var Image = function (_Component) {
     _createClass(Image, [{
         key: 'render',
         value: function render() {
-            return _react2.default.createElement('img', { src: this.props.imageUrl, style: { width: this.props.width, height: this.props.height }, alt: this.props.title });
+            var _props = this.props,
+                _props$image = _props.image,
+                imageUrl = _props$image.imageUrl,
+                width = _props$image.width,
+                height = _props$image.height,
+                title = _props.title;
+
+            return _react2.default.createElement('img', { src: imageUrl, style: { width: width, height: height }, alt: title });
         }
     }]);
 
@@ -19866,10 +19873,17 @@ var Price = function (_Component) {
     _createClass(Price, [{
         key: 'render',
         value: function render() {
+            var price = new Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB' }).format(this.props.price);
             return _react2.default.createElement(
                 'div',
-                { style: { textAlign: 'center', fontSize: '30px', margin: '5px 0', fontWeight: 'bold', color: '#980214' } },
-                this.props.price
+                { style: {
+                        textAlign: 'center',
+                        fontSize: '30px',
+                        margin: '5px 0',
+                        fontWeight: 'bold',
+                        color: '#980214'
+                    } },
+                price
             );
         }
     }]);
@@ -19926,13 +19940,11 @@ var ProductCard = function (_Component) {
             return _react2.default.createElement(
                 'span',
                 {
-                    style: { border: '2px solid #dedede', display: 'inline-block', margin: '5px' }
+                    style: { border: '2px solid #09c9ee', background: '#fff', display: 'inline-block', margin: '5px' }
                 },
                 _react2.default.createElement(_image2.default, {
                     title: this.props.product.title,
-                    width: this.props.product.width,
-                    height: this.props.product.height,
-                    imageUrl: this.props.product.imageUrl
+                    image: this.props.product.image
                 }),
                 _react2.default.createElement(_textbox2.default, { title: this.props.product.title }),
                 _react2.default.createElement(_price2.default, { price: this.props.product.price })
@@ -19953,80 +19965,104 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = [{
     "id": 1,
     "title": "cup",
-    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/ikea-kruzka-belyj__0328951_PE520152_S4.JPG",
-    "price": "130 руб.",
-    "width": "300px",
-    "height": "300px"
+    "price": "130",
+    "image": {
+        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/ikea-kruzka-belyj__0328951_PE520152_S4.JPG",
+        "width": "300px",
+        "height": "300px"
+    }
 }, {
     "id": 2,
     "title": "pillow",
-    "imageUrl": "https://www.ikea.com\/ru\/ru\/images\/products\/ursula-cehol-na-podusku__0503667_PE632848_S4.JPG",
-    "price": "600 руб.",
-    "width": "300px",
-    "height": "300px"
+    "price": "600",
+    "image": {
+        "imageUrl": "https://www.ikea.com\/ru\/ru\/images\/products\/ursula-cehol-na-podusku__0503667_PE632848_S4.JPG",
+        "width": "300px",
+        "height": "300px"
+    }
 }, {
     "id": 3,
     "title": "box",
-    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/pingla-korobka-s-kryskoj-cernyj__0398498_PE563788_S4.JPG",
-    "price": "100 руб.",
-    "width": "300px",
-    "height": "300px"
+    "price": "100",
+    "image": {
+        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/pingla-korobka-s-kryskoj-cernyj__0398498_PE563788_S4.JPG",
+        "width": "300px",
+        "height": "300px"
+    }
 }, {
     "id": 4,
     "title": "plate",
-    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/vardagen-tarelka-seryj__0445947_PE596164_S4.JPG",
-    "price": "100 руб.",
-    "width": "300px",
-    "height": "300px"
+    "price": "100",
+    "image": {
+        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/vardagen-tarelka-seryj__0445947_PE596164_S4.JPG",
+        "width": "300px",
+        "height": "300px"
+    }
 }, {
     "id": 5,
     "title": "frame",
-    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/virserum-rama-zeltyj__0202741_PE359077_S4.JPG",
-    "price": "150 руб.",
-    "width": "300px",
-    "height": "300px"
+    "price": "150",
+    "image": {
+        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/virserum-rama-zeltyj__0202741_PE359077_S4.JPG",
+        "width": "300px",
+        "height": "300px"
+    }
 }, {
     "id": 6,
     "title": "plaid",
-    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/lizamari-pled-sinij__0491584_PE625239_S4.JPG",
-    "price": "400 руб.",
-    "width": "300px",
-    "height": "300px"
+    "price": "400",
+    "image": {
+        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/lizamari-pled-sinij__0491584_PE625239_S4.JPG",
+        "width": "300px",
+        "height": "300px"
+    }
 }, {
     "id": 7,
     "title": "curtains",
-    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/mariatistel-gardiny-para-zeltyj__0399387_PE564432_S4.JPG",
-    "price": "2000 руб.",
-    "width": "300px",
-    "height": "300px"
+    "price": "2000",
+    "image": {
+        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/mariatistel-gardiny-para-zeltyj__0399387_PE564432_S4.JPG",
+        "width": "300px",
+        "height": "300px"
+    }
 }, {
     "id": 8,
     "title": "chair",
-    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/sven-bertil-stul-cernyj__0483195_PE620715_S4.JPG",
-    "price": "2900 руб.",
-    "width": "300px",
-    "height": "300px"
+    "price": "2900",
+    "image": {
+        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/sven-bertil-stul-cernyj__0483195_PE620715_S4.JPG",
+        "width": "300px",
+        "height": "300px"
+    }
 }, {
     "id": 9,
     "title": "sofa",
-    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/klippan-divan-mestnyj-raznye-cveta__0562992_PE663645_S4.JPG",
-    "price": "13000 руб.",
-    "width": "300px",
-    "height": "300px"
+    "price": "13000",
+    "image": {
+        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/klippan-divan-mestnyj-raznye-cveta__0562992_PE663645_S4.JPG",
+        "width": "300px",
+        "height": "300px"
+    }
+
 }, {
     "id": 10,
     "title": "bed",
-    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/nordli-karkas-krovati-s-asikami-belyj__0494839_PE627362_S4.JPG",
-    "price": "22000 руб.",
-    "width": "300px",
-    "height": "300px"
+    "price": "22000",
+    "image": {
+        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/nordli-karkas-krovati-s-asikami-belyj__0494839_PE627362_S4.JPG",
+        "width": "300px",
+        "height": "300px"
+    }
 }, {
     "id": 11,
     "title": "mirror",
-    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/frekk-zerkalo__26262_PE092247_S4.JPG",
-    "price": "500 руб.",
-    "width": "300px",
-    "height": "300px"
+    "price": "500",
+    "image": {
+        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/frekk-zerkalo__26262_PE092247_S4.JPG",
+        "width": "300px",
+        "height": "300px"
+    }
+
 }];
 },{}],"src\\components\\catalog.js":[function(require,module,exports) {
 "use strict";
@@ -20069,35 +20105,12 @@ var Catalog = function (_Component) {
     _createClass(Catalog, [{
         key: "render",
         value: function render() {
-            var products = [];
-            var _iteratorNormalCompletion = true;
-            var _didIteratorError = false;
-            var _iteratorError = undefined;
-
-            try {
-                for (var _iterator = _Products2.default[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                    var item = _step.value;
-
-                    products.push(_react2.default.createElement(_product_card2.default, { product: item }));
-                }
-            } catch (err) {
-                _didIteratorError = true;
-                _iteratorError = err;
-            } finally {
-                try {
-                    if (!_iteratorNormalCompletion && _iterator.return) {
-                        _iterator.return();
-                    }
-                } finally {
-                    if (_didIteratorError) {
-                        throw _iteratorError;
-                    }
-                }
-            }
-
+            var products = _Products2.default.map(function (item) {
+                return _react2.default.createElement(_product_card2.default, { key: item.id, product: item });
+            });
             return _react2.default.createElement(
                 "div",
-                { style: { background: '#e9ee92' } },
+                { style: { background: '#f4fd5e' } },
                 products
             );
         }
@@ -20154,7 +20167,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '61346' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '53038' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
