@@ -2093,7 +2093,99 @@ var Price = function (_Component) {
 }(_react.Component);
 
 exports.default = Price;
-},{"react":"node_modules\\react\\index.js"}],"src\\components\\product_card.js":[function(require,module,exports) {
+},{"react":"node_modules\\react\\index.js"}],"src\\context\\context.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Consumer = exports.Provider = undefined;
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _React$createContext = _react2.default.createContext(),
+    Provider = _React$createContext.Provider,
+    Consumer = _React$createContext.Consumer;
+
+exports.Provider = Provider;
+exports.Consumer = Consumer;
+},{"react":"node_modules\\react\\index.js"}],"src\\components\\button.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _context = require('../context/context');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var btnStyle = {
+    color: '#fff',
+    background: '#00435a',
+    display: 'block',
+    margin: '10px auto',
+    padding: '5px 20px',
+    fontSize: '20px',
+    border: 'none',
+    outline: 'none',
+    borderRadius: '20px'
+};
+
+var Button = function (_Component) {
+    _inherits(Button, _Component);
+
+    function Button() {
+        _classCallCheck(this, Button);
+
+        return _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).apply(this, arguments));
+    }
+
+    _createClass(Button, [{
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            return _react2.default.createElement(
+                _context.Consumer,
+                null,
+                function (_ref) {
+                    var clickOnBtn = _ref.clickOnBtn;
+
+                    return _react2.default.createElement(
+                        'button',
+                        { style: btnStyle,
+                            onClick: function onClick() {
+                                clickOnBtn(_this2.props.product);
+                            } },
+                        'BUY'
+                    );
+                }
+            );
+        }
+    }]);
+
+    return Button;
+}(_react.Component);
+
+exports.default = Button;
+},{"react":"node_modules\\react\\index.js","../context/context":"src\\context\\context.js"}],"src\\components\\product_card.js":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2118,7 +2210,9 @@ var _price = require('./price');
 
 var _price2 = _interopRequireDefault(_price);
 
-var _index = require('../../index');
+var _button = require('./button');
+
+var _button2 = _interopRequireDefault(_button);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2127,6 +2221,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var prodCardStyle = {
+    border: '2px solid #09c9ee',
+    background: '#fff',
+    display: 'inline-block',
+    margin: '5px'
+};
 
 var ProductCard = function (_Component) {
     _inherits(ProductCard, _Component);
@@ -2140,45 +2241,23 @@ var ProductCard = function (_Component) {
     _createClass(ProductCard, [{
         key: 'render',
         value: function render() {
-            var _this2 = this;
+            var _props$product = this.props.product,
+                title = _props$product.title,
+                price = _props$product.price,
+                image = _props$product.image;
 
             return _react2.default.createElement(
                 'span',
                 {
-                    style: { border: '2px solid #09c9ee', background: '#fff', display: 'inline-block', margin: '5px' }
+                    style: prodCardStyle
                 },
                 _react2.default.createElement(_image2.default, {
-                    title: this.props.product.title,
-                    image: this.props.product.image
+                    title: title,
+                    image: image
                 }),
-                _react2.default.createElement(_textbox2.default, { title: this.props.product.title }),
-                _react2.default.createElement(_price2.default, { price: this.props.product.price }),
-                _react2.default.createElement(
-                    _index.Consumer,
-                    null,
-                    function (allValue) {
-                        return _react2.default.createElement(
-                            'button',
-                            {
-                                style: {
-                                    color: '#fff',
-                                    background: '#00435a',
-                                    display: 'block',
-                                    margin: '10px auto',
-                                    padding: '5px 20px',
-                                    fontSize: '20px',
-                                    border: 'none',
-                                    outline: 'none',
-                                    borderRadius: '20px'
-                                },
-                                onClick: function onClick() {
-                                    allValue.clickOnBtn(_this2.props.product);
-                                }
-                            },
-                            'BUY'
-                        );
-                    }
-                )
+                _react2.default.createElement(_textbox2.default, { title: title }),
+                _react2.default.createElement(_price2.default, { price: price }),
+                _react2.default.createElement(_button2.default, { product: this.props.product })
             );
         }
     }]);
@@ -2187,115 +2266,7 @@ var ProductCard = function (_Component) {
 }(_react.Component);
 
 exports.default = ProductCard;
-},{"react":"node_modules\\react\\index.js","./image":"src\\components\\image.js","./textbox":"src\\components\\textbox.js","./price":"src\\components\\price.js","../../index":"index.js"}],"src\\constants\\Products.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = [{
-    "id": 1,
-    "title": "cup",
-    "price": "130",
-    "image": {
-        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/ikea-kruzka-belyj__0328951_PE520152_S4.JPG",
-        "width": "300px",
-        "height": "300px"
-    }
-}, {
-    "id": 2,
-    "title": "pillow",
-    "price": "600",
-    "image": {
-        "imageUrl": "https://www.ikea.com\/ru\/ru\/images\/products\/ursula-cehol-na-podusku__0503667_PE632848_S4.JPG",
-        "width": "300px",
-        "height": "300px"
-    }
-}, {
-    "id": 3,
-    "title": "box",
-    "price": "100",
-    "image": {
-        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/pingla-korobka-s-kryskoj-cernyj__0398498_PE563788_S4.JPG",
-        "width": "300px",
-        "height": "300px"
-    }
-}, {
-    "id": 4,
-    "title": "plate",
-    "price": "100",
-    "image": {
-        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/vardagen-tarelka-seryj__0445947_PE596164_S4.JPG",
-        "width": "300px",
-        "height": "300px"
-    }
-}, {
-    "id": 5,
-    "title": "frame",
-    "price": "150",
-    "image": {
-        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/virserum-rama-zeltyj__0202741_PE359077_S4.JPG",
-        "width": "300px",
-        "height": "300px"
-    }
-}, {
-    "id": 6,
-    "title": "plaid",
-    "price": "400",
-    "image": {
-        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/lizamari-pled-sinij__0491584_PE625239_S4.JPG",
-        "width": "300px",
-        "height": "300px"
-    }
-}, {
-    "id": 7,
-    "title": "curtains",
-    "price": "2000",
-    "image": {
-        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/mariatistel-gardiny-para-zeltyj__0399387_PE564432_S4.JPG",
-        "width": "300px",
-        "height": "300px"
-    }
-}, {
-    "id": 8,
-    "title": "chair",
-    "price": "2900",
-    "image": {
-        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/sven-bertil-stul-cernyj__0483195_PE620715_S4.JPG",
-        "width": "300px",
-        "height": "300px"
-    }
-}, {
-    "id": 9,
-    "title": "sofa",
-    "price": "13000",
-    "image": {
-        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/klippan-divan-mestnyj-raznye-cveta__0562992_PE663645_S4.JPG",
-        "width": "300px",
-        "height": "300px"
-    }
-
-}, {
-    "id": 10,
-    "title": "bed",
-    "price": "22000",
-    "image": {
-        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/nordli-karkas-krovati-s-asikami-belyj__0494839_PE627362_S4.JPG",
-        "width": "300px",
-        "height": "300px"
-    }
-}, {
-    "id": 11,
-    "title": "mirror",
-    "price": "500",
-    "image": {
-        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/frekk-zerkalo__26262_PE092247_S4.JPG",
-        "width": "300px",
-        "height": "300px"
-    }
-
-}];
-},{}],"src\\components\\catalog.js":[function(require,module,exports) {
+},{"react":"node_modules\\react\\index.js","./image":"src\\components\\image.js","./textbox":"src\\components\\textbox.js","./price":"src\\components\\price.js","./button":"src\\components\\button.js"}],"src\\components\\catalog.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2312,9 +2283,7 @@ var _product_card = require("./product_card");
 
 var _product_card2 = _interopRequireDefault(_product_card);
 
-var _Products = require("../constants/Products");
-
-var _Products2 = _interopRequireDefault(_Products);
+var _context = require("../context/context");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2336,13 +2305,21 @@ var Catalog = function (_Component) {
     _createClass(Catalog, [{
         key: "render",
         value: function render() {
-            var products = _Products2.default.map(function (item) {
-                return _react2.default.createElement(_product_card2.default, { key: item.id, product: item });
-            });
             return _react2.default.createElement(
                 "div",
-                { style: { background: '#f4fd5e' } },
-                products
+                { style: { background: '#f4fd5e', marginTop: '33px' } },
+                _react2.default.createElement(
+                    _context.Consumer,
+                    null,
+                    function (_ref) {
+                        var products = _ref.products;
+
+                        var productCardFunc = function productCardFunc(item) {
+                            return _react2.default.createElement(_product_card2.default, { key: item.id, product: item });
+                        };
+                        return products.map(productCardFunc);
+                    }
+                )
             );
         }
     }]);
@@ -2351,7 +2328,7 @@ var Catalog = function (_Component) {
 }(_react.Component);
 
 exports.default = Catalog;
-},{"react":"node_modules\\react\\index.js","./product_card":"src\\components\\product_card.js","../constants/Products":"src\\constants\\Products.js"}],"src\\components\\basket.js":[function(require,module,exports) {
+},{"react":"node_modules\\react\\index.js","./product_card":"src\\components\\product_card.js","../context/context":"src\\context\\context.js"}],"src\\components\\basket.js":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2364,7 +2341,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _index = require('../../index');
+var _context = require('../context/context');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2374,40 +2351,44 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Basket = function (_Component) {
-    _inherits(Basket, _Component);
+var cartStyle = {
+    background: 'rgb(84, 137, 162)',
+    position: 'fixed',
+    top: '0',
+    left: '0',
+    right: '0',
+    color: '#fff',
+    fontWeight: '700',
+    fontSize: '20px',
+    padding: '5px'
+};
 
-    function Basket() {
-        _classCallCheck(this, Basket);
+var Cart = function (_Component) {
+    _inherits(Cart, _Component);
 
-        return _possibleConstructorReturn(this, (Basket.__proto__ || Object.getPrototypeOf(Basket)).apply(this, arguments));
+    function Cart() {
+        _classCallCheck(this, Cart);
+
+        return _possibleConstructorReturn(this, (Cart.__proto__ || Object.getPrototypeOf(Cart)).apply(this, arguments));
     }
 
-    _createClass(Basket, [{
+    _createClass(Cart, [{
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                { style: {
-                        background: 'rgb(84, 137, 162)',
-                        position: 'fixed',
-                        top: '0',
-                        left: '0',
-                        right: '0',
-                        color: '#fff',
-                        fontWeight: '700',
-                        fontSize: '20px',
-                        padding: '5px'
-                    } },
+                { style: cartStyle },
                 _react2.default.createElement(
-                    _index.Consumer,
+                    _context.Consumer,
                     null,
-                    function (allValue) {
+                    function (_ref) {
+                        var cart = _ref.cart;
+
                         return _react2.default.createElement(
                             'div',
                             { style: { width: '100%' } },
                             '\u041A\u043E\u0440\u0437\u0438\u043D\u0430: ',
-                            allValue.product.length
+                            cart.length
                         );
                     }
                 )
@@ -2415,11 +2396,11 @@ var Basket = function (_Component) {
         }
     }]);
 
-    return Basket;
+    return Cart;
 }(_react.Component);
 
-exports.default = Basket;
-},{"react":"node_modules\\react\\index.js","../../index":"index.js"}],"node_modules\\fbjs\\lib\\ExecutionEnvironment.js":[function(require,module,exports) {
+exports.default = Cart;
+},{"react":"node_modules\\react\\index.js","../context/context":"src\\context\\context.js"}],"node_modules\\fbjs\\lib\\ExecutionEnvironment.js":[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -20218,31 +20199,140 @@ if ('development' === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules\\react-dom\\cjs\\react-dom.development.js"}],"index.js":[function(require,module,exports) {
-'use strict';
+},{"./cjs/react-dom.development.js":"node_modules\\react-dom\\cjs\\react-dom.development.js"}],"src\\constants\\Products.js":[function(require,module,exports) {
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Consumer = exports.Provider = undefined;
+exports.default = [{
+    "id": 1,
+    "title": "cup",
+    "price": "130",
+    "image": {
+        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/ikea-kruzka-belyj__0328951_PE520152_S4.JPG",
+        "width": "300px",
+        "height": "300px"
+    }
+}, {
+    "id": 2,
+    "title": "pillow",
+    "price": "600",
+    "image": {
+        "imageUrl": "https://www.ikea.com\/ru\/ru\/images\/products\/ursula-cehol-na-podusku__0503667_PE632848_S4.JPG",
+        "width": "300px",
+        "height": "300px"
+    }
+}, {
+    "id": 3,
+    "title": "box",
+    "price": "100",
+    "image": {
+        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/pingla-korobka-s-kryskoj-cernyj__0398498_PE563788_S4.JPG",
+        "width": "300px",
+        "height": "300px"
+    }
+}, {
+    "id": 4,
+    "title": "plate",
+    "price": "100",
+    "image": {
+        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/vardagen-tarelka-seryj__0445947_PE596164_S4.JPG",
+        "width": "300px",
+        "height": "300px"
+    }
+}, {
+    "id": 5,
+    "title": "frame",
+    "price": "150",
+    "image": {
+        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/virserum-rama-zeltyj__0202741_PE359077_S4.JPG",
+        "width": "300px",
+        "height": "300px"
+    }
+}, {
+    "id": 6,
+    "title": "plaid",
+    "price": "400",
+    "image": {
+        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/lizamari-pled-sinij__0491584_PE625239_S4.JPG",
+        "width": "300px",
+        "height": "300px"
+    }
+}, {
+    "id": 7,
+    "title": "curtains",
+    "price": "2000",
+    "image": {
+        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/mariatistel-gardiny-para-zeltyj__0399387_PE564432_S4.JPG",
+        "width": "300px",
+        "height": "300px"
+    }
+}, {
+    "id": 8,
+    "title": "chair",
+    "price": "2900",
+    "image": {
+        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/sven-bertil-stul-cernyj__0483195_PE620715_S4.JPG",
+        "width": "300px",
+        "height": "300px"
+    }
+}, {
+    "id": 9,
+    "title": "sofa",
+    "price": "13000",
+    "image": {
+        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/klippan-divan-mestnyj-raznye-cveta__0562992_PE663645_S4.JPG",
+        "width": "300px",
+        "height": "300px"
+    }
+
+}, {
+    "id": 10,
+    "title": "bed",
+    "price": "22000",
+    "image": {
+        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/nordli-karkas-krovati-s-asikami-belyj__0494839_PE627362_S4.JPG",
+        "width": "300px",
+        "height": "300px"
+    }
+}, {
+    "id": 11,
+    "title": "mirror",
+    "price": "500",
+    "image": {
+        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/frekk-zerkalo__26262_PE092247_S4.JPG",
+        "width": "300px",
+        "height": "300px"
+    }
+
+}];
+},{}],"index.js":[function(require,module,exports) {
+"use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _catalog = require('./src/components/catalog');
+var _catalog = require("./src/components/catalog");
 
 var _catalog2 = _interopRequireDefault(_catalog);
 
-var _basket = require('./src/components/basket');
+var _basket = require("./src/components/basket");
 
 var _basket2 = _interopRequireDefault(_basket);
 
-var _reactDom = require('react-dom');
+var _reactDom = require("react-dom");
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _context = require("./src/context/context");
+
+var _Products = require("./src/constants/Products");
+
+var _Products2 = _interopRequireDefault(_Products);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20251,13 +20341,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var _React$createContext = _react2.default.createContext(),
-    Provider = _React$createContext.Provider,
-    Consumer = _React$createContext.Consumer;
-
-exports.Provider = Provider;
-exports.Consumer = Consumer;
 
 var Header = function (_Component) {
     _inherits(Header, _Component);
@@ -20269,12 +20352,15 @@ var Header = function (_Component) {
     }
 
     _createClass(Header, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             return _react2.default.createElement(
-                'div',
+                "div",
                 {
-                    style: { border: '1px solid #000', marginTop: '34px', textAlign: 'center' }
+                    style: {
+                        border: '1px solid #000',
+                        marginTop: '34px',
+                        textAlign: 'center' }
                 },
                 this.props.children
             );
@@ -20292,37 +20378,39 @@ var App = function (_Component2) {
 
         var _this2 = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
-        _this2.state = { productsInCart: [] };
-        _this2.toCart = _this2.toCart.bind(_this2);
+        _this2.state = { cart: [], products: _Products2.default };
+        _this2.addToCart = _this2.addToCart.bind(_this2);
         return _this2;
     }
 
     _createClass(App, [{
-        key: 'toCart',
-        value: function toCart(product) {
-            var allProducts = this.state.productsInCart;
-            allProducts.push(product);
-            this.setState({ productInCart: product });
+        key: "addToCart",
+        value: function addToCart(product) {
+            var _Object$assign = Object.assign({}, this.state),
+                cart = _Object$assign.cart;
+
+            var idx = cart.indexOf(product);
+            if (idx === -1) {
+                cart.push(product);
+            }
+            this.setState({ cart: cart });
         }
     }, {
-        key: 'render',
+        key: "render",
         value: function render() {
             return _react2.default.createElement(
-                'div',
+                "div",
                 null,
                 _react2.default.createElement(
-                    Provider,
+                    _context.Provider,
                     { value: {
-                            product: this.state.productsInCart,
-                            clickOnBtn: this.toCart
+                            cart: this.state.cart,
+                            products: this.state.products,
+                            clickOnBtn: this.addToCart
 
                         } },
-                    _react2.default.createElement(
-                        Header,
-                        null,
-                        _react2.default.createElement(_catalog2.default, null),
-                        _react2.default.createElement(_basket2.default, null)
-                    )
+                    _react2.default.createElement(_basket2.default, null),
+                    _react2.default.createElement(_catalog2.default, null)
                 )
             );
         }
@@ -20332,7 +20420,7 @@ var App = function (_Component2) {
 }(_react.Component);
 
 _reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('root'));
-},{"react":"node_modules\\react\\index.js","./src/components/catalog":"src\\components\\catalog.js","./src/components/basket":"src\\components\\basket.js","react-dom":"node_modules\\react-dom\\index.js"}],"..\\AppData\\Roaming\\npm\\node_modules\\parcel-bundler\\src\\builtins\\hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules\\react\\index.js","./src/components/catalog":"src\\components\\catalog.js","./src/components/basket":"src\\components\\basket.js","react-dom":"node_modules\\react-dom\\index.js","./src/context/context":"src\\context\\context.js","./src/constants/Products":"src\\constants\\Products.js"}],"..\\AppData\\Roaming\\npm\\node_modules\\parcel-bundler\\src\\builtins\\hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -20361,7 +20449,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '58855' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '60345' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

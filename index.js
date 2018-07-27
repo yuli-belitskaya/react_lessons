@@ -1,18 +1,19 @@
-import React, { Component } from 'react'
-import { context } from 'react';
+import React, { Component } from 'react';
 import Catalog from "./src/components/catalog";
-import Basket from "./src/components/basket";
+import Cart from "./src/components/basket";
 import ReactDOM from 'react-dom';
+import {Provider} from "./src/context/context";
+import productsList from "./src/constants/Products";
 
-
-
-export const {Provider, Consumer} = React.createContext();
 
 class Header extends Component {
     render() {
         return (
             <div
-                style={{ border: '1px solid #000', marginTop: '34px', textAlign: 'center' }}
+                style={{
+                    border: '1px solid #000',
+                    marginTop: '34px',
+                    textAlign: 'center' }}
             >
                 {this.props.children}
             </div>
@@ -23,27 +24,31 @@ class Header extends Component {
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = { productsInCart: [] };
-        this.toCart = this.toCart.bind(this);
+        this.state = { cart: [], products: productsList };
+        this.addToCart = this.addToCart.bind(this);
     }
-    toCart (product) {
-        let allProducts = this.state.productsInCart;
-        allProducts.push(product);
-        this.setState({productInCart: product});
+    addToCart (product) {
+        let { cart } = Object.assign({}, this.state);
+        const idx = cart.indexOf(product);
+        if (idx === -1) {
+            cart.push(product);
+        }
+        this.setState({ cart });
+
     }
+
     render() {
         return (
             <div>
                 <Provider value={{
-                    product: this.state.productsInCart,
-                    clickOnBtn: this.toCart,
+                    cart: this.state.cart,
+                    products: this.state.products,
+                    clickOnBtn: this.addToCart,
 
 
                 }}>
-                    <Header>
-                        <Catalog />
-                        <Basket />
-                    </Header>
+                    <Cart />
+                    <Catalog />
                 </Provider>
             </div>
         );

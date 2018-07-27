@@ -1,41 +1,29 @@
 import React, { Component } from 'react';
-import { Context } from 'react';
 import Image from './image';
 import TextBox from "./textbox";
 import Price from "./price";
-import { Consumer } from "../../index";
+import Button from "./button";
+
+const prodCardStyle = {
+    border: '2px solid #09c9ee',
+    background: '#fff',
+    display: 'inline-block',
+    margin: '5px'
+};
 
 class ProductCard extends Component {
     render() {
+        const { title, price, image } = this.props.product;
         return <span
-                    style={{ border: '2px solid #09c9ee', background: '#fff', display: 'inline-block', margin: '5px'}}
+                    style={prodCardStyle}
                 >
                 <Image
-                    title={this.props.product.title}
-                    image={this.props.product.image}
+                    title={title}
+                    image={image}
                 />
-                <TextBox title={this.props.product.title}/>
-                <Price price={this.props.product.price}/>
-                <Consumer>
-                    {allValue => (
-                        <button
-                            style={{
-                                color: '#fff',
-                                background: '#00435a',
-                                display: 'block',
-                                margin: '10px auto',
-                                padding: '5px 20px',
-                                fontSize: '20px',
-                                border: 'none',
-                                outline: 'none',
-                                borderRadius: '20px',
-                            }}
-                            onClick={() => {
-                                allValue.clickOnBtn(this.props.product)
-                            }}
-                        >BUY</button>
-                    )}
-                </Consumer>
+                <TextBox title={title}/>
+                <Price price={price}/>
+                <Button product={this.props.product} />
 
                 </span>
     }
