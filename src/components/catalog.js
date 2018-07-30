@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import ProductCard from "./product_card";
-import {Consumer} from "../context/context";
+import ProductContext from "../context/product_context";
 
 class Catalog extends Component {
   render() {
     return (
       <div style={{background: '#f4fd5e', marginTop: '33px'}}>
-        <Consumer>
+        <ProductContext.Consumer>
           {
             ({products}) => {
               return products.map((item) => {
@@ -14,7 +14,7 @@ class Catalog extends Component {
               });
             }
           }
-        </Consumer>
+        </ProductContext.Consumer>
       </div>
     )
   }

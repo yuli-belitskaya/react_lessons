@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Image from './image';
 import TextBox from "./textbox";
 import Price from "./price";
-import Button from "./button";
+import AddToCartButton from "./add_to_cart_button";
 
 const prodCardStyle = {
   border: '2px solid #09c9ee',
@@ -23,7 +23,7 @@ class ProductCard extends Component {
       />
       <TextBox title={title}/>
       <Price price={price}/>
-      <Button product={this.props.product}/>
+      <AddToCartButton product={this.props.product}/>
     </span>
   }
 }

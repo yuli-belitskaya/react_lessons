@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Consumer} from "../context/context";
+import ProductContext from "../context/product_context";
 
 const btnStyle = {
   color: '#fff',
@@ -13,10 +13,10 @@ const btnStyle = {
   borderRadius: '20px',
 };
 
-class Button extends Component {
+class AddToCartButton extends Component {
   render() {
     return (
-      <Consumer>
+      <ProductContext.Consumer>
         {
           ({addToCart}) => {
             return (
@@ -28,9 +28,9 @@ class Button extends Component {
             )
           }
         }
-      </Consumer>
+      </ProductContext.Consumer>
     )
   }
 }
 
-export default Button;
+export default AddToCartButton;

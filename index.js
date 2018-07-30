@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import Catalog from "./src/components/catalog";
 import Cart from "./src/components/cart";
 import ReactDOM from 'react-dom';
-import {Provider} from "./src/context/context";
+import CartContext from "./src/context/cart_context";
+import ProductContext from "./src/context/product_context";
 import productsList from "./src/constants/Products";
 
 class App extends Component {
@@ -13,7 +14,7 @@ class App extends Component {
   }
 
   addToCart(product) {
-    let {cart} = JSON.parse(JSON.stringify(this.state));
+    const cart = [...this.state.cart];
 
     const idx = cart.find((item) => {
       return product.id === item.id;
@@ -28,17 +29,17 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Provider value={{
+        <CartContext.Provider value={{
           cart: this.state.cart
         }}>
           <Cart/>
-        </Provider>
-        <Provider value={{
+        </CartContext.Provider>
+        <ProductContext.Provider value={{
           products: this.state.products,
           addToCart: this.addToCart,
         }}>
           <Catalog/>
-        </Provider>
+        </ProductContext.Provider>
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Consumer} from "../context/context";
+import CartContext from "../context/cart_context";
 
 const cartStyle = {
   background: 'rgb(84, 137, 162)',
@@ -17,7 +17,7 @@ class Cart extends Component {
   render() {
     return (
       <div style={cartStyle}>
-        <Consumer>
+        <CartContext.Consumer>
           {
             ({cart}) => {
               return (
@@ -27,7 +27,7 @@ class Cart extends Component {
               )
             }
           }
-        </Consumer>
+        </CartContext.Consumer>
       </div>
     )
   }

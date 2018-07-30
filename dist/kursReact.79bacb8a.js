@@ -2099,13 +2099,12 @@ var Price = function (_Component) {
 }(_react.Component);
 
 exports.default = Price;
-},{"react":"node_modules\\react\\index.js"}],"src\\context\\context.js":[function(require,module,exports) {
+},{"react":"node_modules\\react\\index.js"}],"src\\context\\product_context.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Consumer = exports.Provider = undefined;
 
 var _react = require("react");
 
@@ -2113,13 +2112,9 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _React$createContext = _react2.default.createContext(),
-    Provider = _React$createContext.Provider,
-    Consumer = _React$createContext.Consumer;
-
-exports.Provider = Provider;
-exports.Consumer = Consumer;
-},{"react":"node_modules\\react\\index.js"}],"src\\components\\button.js":[function(require,module,exports) {
+var context = _react2.default.createContext();
+exports.default = context;
+},{"react":"node_modules\\react\\index.js"}],"src\\components\\add_to_cart_button.js":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2132,7 +2127,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _context = require('../context/context');
+var _product_context = require('../context/product_context');
+
+var _product_context2 = _interopRequireDefault(_product_context);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2154,22 +2151,22 @@ var btnStyle = {
   borderRadius: '20px'
 };
 
-var Button = function (_Component) {
-  _inherits(Button, _Component);
+var AddToCartButton = function (_Component) {
+  _inherits(AddToCartButton, _Component);
 
-  function Button() {
-    _classCallCheck(this, Button);
+  function AddToCartButton() {
+    _classCallCheck(this, AddToCartButton);
 
-    return _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (AddToCartButton.__proto__ || Object.getPrototypeOf(AddToCartButton)).apply(this, arguments));
   }
 
-  _createClass(Button, [{
+  _createClass(AddToCartButton, [{
     key: 'render',
     value: function render() {
       var _this2 = this;
 
       return _react2.default.createElement(
-        _context.Consumer,
+        _product_context2.default.Consumer,
         null,
         function (_ref) {
           var addToCart = _ref.addToCart;
@@ -2187,11 +2184,11 @@ var Button = function (_Component) {
     }
   }]);
 
-  return Button;
+  return AddToCartButton;
 }(_react.Component);
 
-exports.default = Button;
-},{"react":"node_modules\\react\\index.js","../context/context":"src\\context\\context.js"}],"src\\components\\product_card.js":[function(require,module,exports) {
+exports.default = AddToCartButton;
+},{"react":"node_modules\\react\\index.js","../context/product_context":"src\\context\\product_context.js"}],"src\\components\\product_card.js":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2216,9 +2213,9 @@ var _price = require('./price');
 
 var _price2 = _interopRequireDefault(_price);
 
-var _button = require('./button');
+var _add_to_cart_button = require('./add_to_cart_button');
 
-var _button2 = _interopRequireDefault(_button);
+var _add_to_cart_button2 = _interopRequireDefault(_add_to_cart_button);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2263,7 +2260,7 @@ var ProductCard = function (_Component) {
         }),
         _react2.default.createElement(_textbox2.default, { title: title }),
         _react2.default.createElement(_price2.default, { price: price }),
-        _react2.default.createElement(_button2.default, { product: this.props.product })
+        _react2.default.createElement(_add_to_cart_button2.default, { product: this.props.product })
       );
     }
   }]);
@@ -2272,7 +2269,7 @@ var ProductCard = function (_Component) {
 }(_react.Component);
 
 exports.default = ProductCard;
-},{"react":"node_modules\\react\\index.js","./image":"src\\components\\image.js","./textbox":"src\\components\\textbox.js","./price":"src\\components\\price.js","./button":"src\\components\\button.js"}],"src\\components\\catalog.js":[function(require,module,exports) {
+},{"react":"node_modules\\react\\index.js","./image":"src\\components\\image.js","./textbox":"src\\components\\textbox.js","./price":"src\\components\\price.js","./add_to_cart_button":"src\\components\\add_to_cart_button.js"}],"src\\components\\catalog.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2289,7 +2286,9 @@ var _product_card = require("./product_card");
 
 var _product_card2 = _interopRequireDefault(_product_card);
 
-var _context = require("../context/context");
+var _product_context = require("../context/product_context");
+
+var _product_context2 = _interopRequireDefault(_product_context);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2315,7 +2314,7 @@ var Catalog = function (_Component) {
         "div",
         { style: { background: '#f4fd5e', marginTop: '33px' } },
         _react2.default.createElement(
-          _context.Consumer,
+          _product_context2.default.Consumer,
           null,
           function (_ref) {
             var products = _ref.products;
@@ -2333,7 +2332,22 @@ var Catalog = function (_Component) {
 }(_react.Component);
 
 exports.default = Catalog;
-},{"react":"node_modules\\react\\index.js","./product_card":"src\\components\\product_card.js","../context/context":"src\\context\\context.js"}],"src\\components\\cart.js":[function(require,module,exports) {
+},{"react":"node_modules\\react\\index.js","./product_card":"src\\components\\product_card.js","../context/product_context":"src\\context\\product_context.js"}],"src\\context\\cart_context.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var context = _react2.default.createContext();
+exports.default = context;
+},{"react":"node_modules\\react\\index.js"}],"src\\components\\cart.js":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2346,7 +2360,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _context = require('../context/context');
+var _cart_context = require('../context/cart_context');
+
+var _cart_context2 = _interopRequireDefault(_cart_context);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2384,7 +2400,7 @@ var Cart = function (_Component) {
         'div',
         { style: cartStyle },
         _react2.default.createElement(
-          _context.Consumer,
+          _cart_context2.default.Consumer,
           null,
           function (_ref) {
             var cart = _ref.cart;
@@ -2405,7 +2421,7 @@ var Cart = function (_Component) {
 }(_react.Component);
 
 exports.default = Cart;
-},{"react":"node_modules\\react\\index.js","../context/context":"src\\context\\context.js"}],"node_modules\\fbjs\\lib\\ExecutionEnvironment.js":[function(require,module,exports) {
+},{"react":"node_modules\\react\\index.js","../context/cart_context":"src\\context\\cart_context.js"}],"node_modules\\fbjs\\lib\\ExecutionEnvironment.js":[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -20331,13 +20347,21 @@ var _reactDom = require("react-dom");
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _context = require("./src/context/context");
+var _cart_context = require("./src/context/cart_context");
+
+var _cart_context2 = _interopRequireDefault(_cart_context);
+
+var _product_context = require("./src/context/product_context");
+
+var _product_context2 = _interopRequireDefault(_product_context);
 
 var _Products = require("./src/constants/Products");
 
 var _Products2 = _interopRequireDefault(_Products);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -20361,8 +20385,7 @@ var App = function (_Component) {
   _createClass(App, [{
     key: "addToCart",
     value: function addToCart(product) {
-      var _JSON$parse = JSON.parse(JSON.stringify(this.state)),
-          cart = _JSON$parse.cart;
+      var cart = [].concat(_toConsumableArray(this.state.cart));
 
       var idx = cart.find(function (item) {
         return product.id === item.id;
@@ -20380,14 +20403,14 @@ var App = function (_Component) {
         "div",
         null,
         _react2.default.createElement(
-          _context.Provider,
+          _cart_context2.default.Provider,
           { value: {
               cart: this.state.cart
             } },
           _react2.default.createElement(_cart2.default, null)
         ),
         _react2.default.createElement(
-          _context.Provider,
+          _product_context2.default.Provider,
           { value: {
               products: this.state.products,
               addToCart: this.addToCart
@@ -20402,7 +20425,7 @@ var App = function (_Component) {
 }(_react.Component);
 
 _reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('root'));
-},{"react":"node_modules\\react\\index.js","./src/components/catalog":"src\\components\\catalog.js","./src/components/cart":"src\\components\\cart.js","react-dom":"node_modules\\react-dom\\index.js","./src/context/context":"src\\context\\context.js","./src/constants/Products":"src\\constants\\Products.js"}],"..\\AppData\\Roaming\\npm\\node_modules\\parcel-bundler\\src\\builtins\\hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules\\react\\index.js","./src/components/catalog":"src\\components\\catalog.js","./src/components/cart":"src\\components\\cart.js","react-dom":"node_modules\\react-dom\\index.js","./src/context/cart_context":"src\\context\\cart_context.js","./src/context/product_context":"src\\context\\product_context.js","./src/constants/Products":"src\\constants\\Products.js"}],"..\\AppData\\Roaming\\npm\\node_modules\\parcel-bundler\\src\\builtins\\hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -20431,7 +20454,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '50445' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '62832' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
