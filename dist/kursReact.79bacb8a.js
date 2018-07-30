@@ -1952,7 +1952,7 @@ if ('development' === 'production') {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -1970,29 +1970,29 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Image = function (_Component) {
-    _inherits(Image, _Component);
+  _inherits(Image, _Component);
 
-    function Image() {
-        _classCallCheck(this, Image);
+  function Image() {
+    _classCallCheck(this, Image);
 
-        return _possibleConstructorReturn(this, (Image.__proto__ || Object.getPrototypeOf(Image)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Image.__proto__ || Object.getPrototypeOf(Image)).apply(this, arguments));
+  }
+
+  _createClass(Image, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          _props$image = _props.image,
+          imageUrl = _props$image.imageUrl,
+          width = _props$image.width,
+          height = _props$image.height,
+          title = _props.title;
+
+      return _react2.default.createElement('img', { src: imageUrl, style: { width: width, height: height }, alt: title });
     }
+  }]);
 
-    _createClass(Image, [{
-        key: 'render',
-        value: function render() {
-            var _props = this.props,
-                _props$image = _props.image,
-                imageUrl = _props$image.imageUrl,
-                width = _props$image.width,
-                height = _props$image.height,
-                title = _props.title;
-
-            return _react2.default.createElement('img', { src: imageUrl, style: { width: width, height: height }, alt: title });
-        }
-    }]);
-
-    return Image;
+  return Image;
 }(_react.Component);
 
 exports.default = Image;
@@ -2000,7 +2000,7 @@ exports.default = Image;
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -2018,26 +2018,32 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var TextBox = function (_Component) {
-    _inherits(TextBox, _Component);
+  _inherits(TextBox, _Component);
 
-    function TextBox() {
-        _classCallCheck(this, TextBox);
+  function TextBox() {
+    _classCallCheck(this, TextBox);
 
-        return _possibleConstructorReturn(this, (TextBox.__proto__ || Object.getPrototypeOf(TextBox)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (TextBox.__proto__ || Object.getPrototypeOf(TextBox)).apply(this, arguments));
+  }
+
+  _createClass(TextBox, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { style: {
+            textAlign: 'center',
+            fontSize: '20px',
+            fontWeight: 'bold',
+            margin: '5px 0',
+            color: '#001e5d'
+          } },
+        this.props.title
+      );
     }
+  }]);
 
-    _createClass(TextBox, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'div',
-                { style: { textAlign: 'center', fontSize: '20px', fontWeight: 'bold', margin: '5px 0', color: '#001e5d' } },
-                this.props.title
-            );
-        }
-    }]);
-
-    return TextBox;
+  return TextBox;
 }(_react.Component);
 
 exports.default = TextBox;
@@ -2045,7 +2051,7 @@ exports.default = TextBox;
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -2063,33 +2069,33 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Price = function (_Component) {
-    _inherits(Price, _Component);
+  _inherits(Price, _Component);
 
-    function Price() {
-        _classCallCheck(this, Price);
+  function Price() {
+    _classCallCheck(this, Price);
 
-        return _possibleConstructorReturn(this, (Price.__proto__ || Object.getPrototypeOf(Price)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Price.__proto__ || Object.getPrototypeOf(Price)).apply(this, arguments));
+  }
+
+  _createClass(Price, [{
+    key: 'render',
+    value: function render() {
+      var price = new Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB' }).format(this.props.price);
+      return _react2.default.createElement(
+        'div',
+        { style: {
+            textAlign: 'center',
+            fontSize: '30px',
+            margin: '5px 0',
+            fontWeight: 'bold',
+            color: '#980214'
+          } },
+        price
+      );
     }
+  }]);
 
-    _createClass(Price, [{
-        key: 'render',
-        value: function render() {
-            var price = new Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB' }).format(this.props.price);
-            return _react2.default.createElement(
-                'div',
-                { style: {
-                        textAlign: 'center',
-                        fontSize: '30px',
-                        margin: '5px 0',
-                        fontWeight: 'bold',
-                        color: '#980214'
-                    } },
-                price
-            );
-        }
-    }]);
-
-    return Price;
+  return Price;
 }(_react.Component);
 
 exports.default = Price;
@@ -2117,7 +2123,7 @@ exports.Consumer = Consumer;
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -2137,51 +2143,51 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var btnStyle = {
-    color: '#fff',
-    background: '#00435a',
-    display: 'block',
-    margin: '10px auto',
-    padding: '5px 20px',
-    fontSize: '20px',
-    border: 'none',
-    outline: 'none',
-    borderRadius: '20px'
+  color: '#fff',
+  background: '#00435a',
+  display: 'block',
+  margin: '10px auto',
+  padding: '5px 20px',
+  fontSize: '20px',
+  border: 'none',
+  outline: 'none',
+  borderRadius: '20px'
 };
 
 var Button = function (_Component) {
-    _inherits(Button, _Component);
+  _inherits(Button, _Component);
 
-    function Button() {
-        _classCallCheck(this, Button);
+  function Button() {
+    _classCallCheck(this, Button);
 
-        return _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).apply(this, arguments));
-    }
+    return _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).apply(this, arguments));
+  }
 
-    _createClass(Button, [{
-        key: 'render',
-        value: function render() {
-            var _this2 = this;
+  _createClass(Button, [{
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
 
-            return _react2.default.createElement(
-                _context.Consumer,
-                null,
-                function (_ref) {
-                    var clickOnBtn = _ref.clickOnBtn;
+      return _react2.default.createElement(
+        _context.Consumer,
+        null,
+        function (_ref) {
+          var addToCart = _ref.addToCart;
 
-                    return _react2.default.createElement(
-                        'button',
-                        { style: btnStyle,
-                            onClick: function onClick() {
-                                clickOnBtn(_this2.props.product);
-                            } },
-                        'BUY'
-                    );
-                }
-            );
+          return _react2.default.createElement(
+            'button',
+            { style: btnStyle,
+              onClick: function onClick() {
+                addToCart(_this2.props.product);
+              } },
+            'BUY'
+          );
         }
-    }]);
+      );
+    }
+  }]);
 
-    return Button;
+  return Button;
 }(_react.Component);
 
 exports.default = Button;
@@ -2189,7 +2195,7 @@ exports.default = Button;
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -2223,46 +2229,46 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var prodCardStyle = {
-    border: '2px solid #09c9ee',
-    background: '#fff',
-    display: 'inline-block',
-    margin: '5px'
+  border: '2px solid #09c9ee',
+  background: '#fff',
+  display: 'inline-block',
+  margin: '5px'
 };
 
 var ProductCard = function (_Component) {
-    _inherits(ProductCard, _Component);
+  _inherits(ProductCard, _Component);
 
-    function ProductCard() {
-        _classCallCheck(this, ProductCard);
+  function ProductCard() {
+    _classCallCheck(this, ProductCard);
 
-        return _possibleConstructorReturn(this, (ProductCard.__proto__ || Object.getPrototypeOf(ProductCard)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (ProductCard.__proto__ || Object.getPrototypeOf(ProductCard)).apply(this, arguments));
+  }
+
+  _createClass(ProductCard, [{
+    key: 'render',
+    value: function render() {
+      var _props$product = this.props.product,
+          title = _props$product.title,
+          price = _props$product.price,
+          image = _props$product.image;
+
+      return _react2.default.createElement(
+        'span',
+        {
+          style: prodCardStyle
+        },
+        _react2.default.createElement(_image2.default, {
+          title: title,
+          image: image
+        }),
+        _react2.default.createElement(_textbox2.default, { title: title }),
+        _react2.default.createElement(_price2.default, { price: price }),
+        _react2.default.createElement(_button2.default, { product: this.props.product })
+      );
     }
+  }]);
 
-    _createClass(ProductCard, [{
-        key: 'render',
-        value: function render() {
-            var _props$product = this.props.product,
-                title = _props$product.title,
-                price = _props$product.price,
-                image = _props$product.image;
-
-            return _react2.default.createElement(
-                'span',
-                {
-                    style: prodCardStyle
-                },
-                _react2.default.createElement(_image2.default, {
-                    title: title,
-                    image: image
-                }),
-                _react2.default.createElement(_textbox2.default, { title: title }),
-                _react2.default.createElement(_price2.default, { price: price }),
-                _react2.default.createElement(_button2.default, { product: this.props.product })
-            );
-        }
-    }]);
-
-    return ProductCard;
+  return ProductCard;
 }(_react.Component);
 
 exports.default = ProductCard;
@@ -2270,7 +2276,7 @@ exports.default = ProductCard;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -2294,45 +2300,44 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Catalog = function (_Component) {
-    _inherits(Catalog, _Component);
+  _inherits(Catalog, _Component);
 
-    function Catalog() {
-        _classCallCheck(this, Catalog);
+  function Catalog() {
+    _classCallCheck(this, Catalog);
 
-        return _possibleConstructorReturn(this, (Catalog.__proto__ || Object.getPrototypeOf(Catalog)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Catalog.__proto__ || Object.getPrototypeOf(Catalog)).apply(this, arguments));
+  }
+
+  _createClass(Catalog, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { style: { background: '#f4fd5e', marginTop: '33px' } },
+        _react2.default.createElement(
+          _context.Consumer,
+          null,
+          function (_ref) {
+            var products = _ref.products;
+
+            return products.map(function (item) {
+              return _react2.default.createElement(_product_card2.default, { key: item.id, product: item });
+            });
+          }
+        )
+      );
     }
+  }]);
 
-    _createClass(Catalog, [{
-        key: "render",
-        value: function render() {
-            return _react2.default.createElement(
-                "div",
-                { style: { background: '#f4fd5e', marginTop: '33px' } },
-                _react2.default.createElement(
-                    _context.Consumer,
-                    null,
-                    function (_ref) {
-                        var products = _ref.products;
-
-                        var productCardFunc = function productCardFunc(item) {
-                            return _react2.default.createElement(_product_card2.default, { key: item.id, product: item });
-                        };
-                        return products.map(productCardFunc);
-                    }
-                )
-            );
-        }
-    }]);
-
-    return Catalog;
+  return Catalog;
 }(_react.Component);
 
 exports.default = Catalog;
-},{"react":"node_modules\\react\\index.js","./product_card":"src\\components\\product_card.js","../context/context":"src\\context\\context.js"}],"src\\components\\basket.js":[function(require,module,exports) {
+},{"react":"node_modules\\react\\index.js","./product_card":"src\\components\\product_card.js","../context/context":"src\\context\\context.js"}],"src\\components\\cart.js":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -2352,51 +2357,51 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var cartStyle = {
-    background: 'rgb(84, 137, 162)',
-    position: 'fixed',
-    top: '0',
-    left: '0',
-    right: '0',
-    color: '#fff',
-    fontWeight: '700',
-    fontSize: '20px',
-    padding: '5px'
+  background: 'rgb(84, 137, 162)',
+  position: 'fixed',
+  top: '0',
+  left: '0',
+  right: '0',
+  color: '#fff',
+  fontWeight: '700',
+  fontSize: '20px',
+  padding: '5px'
 };
 
 var Cart = function (_Component) {
-    _inherits(Cart, _Component);
+  _inherits(Cart, _Component);
 
-    function Cart() {
-        _classCallCheck(this, Cart);
+  function Cart() {
+    _classCallCheck(this, Cart);
 
-        return _possibleConstructorReturn(this, (Cart.__proto__ || Object.getPrototypeOf(Cart)).apply(this, arguments));
-    }
+    return _possibleConstructorReturn(this, (Cart.__proto__ || Object.getPrototypeOf(Cart)).apply(this, arguments));
+  }
 
-    _createClass(Cart, [{
-        key: 'render',
-        value: function render() {
+  _createClass(Cart, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { style: cartStyle },
+        _react2.default.createElement(
+          _context.Consumer,
+          null,
+          function (_ref) {
+            var cart = _ref.cart;
+
             return _react2.default.createElement(
-                'div',
-                { style: cartStyle },
-                _react2.default.createElement(
-                    _context.Consumer,
-                    null,
-                    function (_ref) {
-                        var cart = _ref.cart;
-
-                        return _react2.default.createElement(
-                            'div',
-                            { style: { width: '100%' } },
-                            '\u041A\u043E\u0440\u0437\u0438\u043D\u0430: ',
-                            cart.length
-                        );
-                    }
-                )
+              'div',
+              { style: { width: '100%' } },
+              '\u041A\u043E\u0440\u0437\u0438\u043D\u0430: ',
+              cart.length
             );
-        }
-    }]);
+          }
+        )
+      );
+    }
+  }]);
 
-    return Cart;
+  return Cart;
 }(_react.Component);
 
 exports.default = Cart;
@@ -20203,109 +20208,107 @@ if ('development' === 'production') {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 exports.default = [{
-    "id": 1,
-    "title": "cup",
-    "price": "130",
-    "image": {
-        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/ikea-kruzka-belyj__0328951_PE520152_S4.JPG",
-        "width": "300px",
-        "height": "300px"
-    }
+  "id": 1,
+  "title": "cup",
+  "price": "130",
+  "image": {
+    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/ikea-kruzka-belyj__0328951_PE520152_S4.JPG",
+    "width": "300px",
+    "height": "300px"
+  }
 }, {
-    "id": 2,
-    "title": "pillow",
-    "price": "600",
-    "image": {
-        "imageUrl": "https://www.ikea.com\/ru\/ru\/images\/products\/ursula-cehol-na-podusku__0503667_PE632848_S4.JPG",
-        "width": "300px",
-        "height": "300px"
-    }
+  "id": 2,
+  "title": "pillow",
+  "price": "600",
+  "image": {
+    "imageUrl": "https://www.ikea.com\/ru\/ru\/images\/products\/ursula-cehol-na-podusku__0503667_PE632848_S4.JPG",
+    "width": "300px",
+    "height": "300px"
+  }
 }, {
-    "id": 3,
-    "title": "box",
-    "price": "100",
-    "image": {
-        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/pingla-korobka-s-kryskoj-cernyj__0398498_PE563788_S4.JPG",
-        "width": "300px",
-        "height": "300px"
-    }
+  "id": 3,
+  "title": "box",
+  "price": "100",
+  "image": {
+    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/pingla-korobka-s-kryskoj-cernyj__0398498_PE563788_S4.JPG",
+    "width": "300px",
+    "height": "300px"
+  }
 }, {
-    "id": 4,
-    "title": "plate",
-    "price": "100",
-    "image": {
-        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/vardagen-tarelka-seryj__0445947_PE596164_S4.JPG",
-        "width": "300px",
-        "height": "300px"
-    }
+  "id": 4,
+  "title": "plate",
+  "price": "100",
+  "image": {
+    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/vardagen-tarelka-seryj__0445947_PE596164_S4.JPG",
+    "width": "300px",
+    "height": "300px"
+  }
 }, {
-    "id": 5,
-    "title": "frame",
-    "price": "150",
-    "image": {
-        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/virserum-rama-zeltyj__0202741_PE359077_S4.JPG",
-        "width": "300px",
-        "height": "300px"
-    }
+  "id": 5,
+  "title": "frame",
+  "price": "150",
+  "image": {
+    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/virserum-rama-zeltyj__0202741_PE359077_S4.JPG",
+    "width": "300px",
+    "height": "300px"
+  }
 }, {
-    "id": 6,
-    "title": "plaid",
-    "price": "400",
-    "image": {
-        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/lizamari-pled-sinij__0491584_PE625239_S4.JPG",
-        "width": "300px",
-        "height": "300px"
-    }
+  "id": 6,
+  "title": "plaid",
+  "price": "400",
+  "image": {
+    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/lizamari-pled-sinij__0491584_PE625239_S4.JPG",
+    "width": "300px",
+    "height": "300px"
+  }
 }, {
-    "id": 7,
-    "title": "curtains",
-    "price": "2000",
-    "image": {
-        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/mariatistel-gardiny-para-zeltyj__0399387_PE564432_S4.JPG",
-        "width": "300px",
-        "height": "300px"
-    }
+  "id": 7,
+  "title": "curtains",
+  "price": "2000",
+  "image": {
+    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/mariatistel-gardiny-para-zeltyj__0399387_PE564432_S4.JPG",
+    "width": "300px",
+    "height": "300px"
+  }
 }, {
-    "id": 8,
-    "title": "chair",
-    "price": "2900",
-    "image": {
-        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/sven-bertil-stul-cernyj__0483195_PE620715_S4.JPG",
-        "width": "300px",
-        "height": "300px"
-    }
+  "id": 8,
+  "title": "chair",
+  "price": "2900",
+  "image": {
+    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/sven-bertil-stul-cernyj__0483195_PE620715_S4.JPG",
+    "width": "300px",
+    "height": "300px"
+  }
 }, {
-    "id": 9,
-    "title": "sofa",
-    "price": "13000",
-    "image": {
-        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/klippan-divan-mestnyj-raznye-cveta__0562992_PE663645_S4.JPG",
-        "width": "300px",
-        "height": "300px"
-    }
-
+  "id": 9,
+  "title": "sofa",
+  "price": "13000",
+  "image": {
+    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/klippan-divan-mestnyj-raznye-cveta__0562992_PE663645_S4.JPG",
+    "width": "300px",
+    "height": "300px"
+  }
 }, {
-    "id": 10,
-    "title": "bed",
-    "price": "22000",
-    "image": {
-        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/nordli-karkas-krovati-s-asikami-belyj__0494839_PE627362_S4.JPG",
-        "width": "300px",
-        "height": "300px"
-    }
+  "id": 10,
+  "title": "bed",
+  "price": "22000",
+  "image": {
+    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/nordli-karkas-krovati-s-asikami-belyj__0494839_PE627362_S4.JPG",
+    "width": "300px",
+    "height": "300px"
+  }
 }, {
-    "id": 11,
-    "title": "mirror",
-    "price": "500",
-    "image": {
-        "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/frekk-zerkalo__26262_PE092247_S4.JPG",
-        "width": "300px",
-        "height": "300px"
-    }
-
+  "id": 11,
+  "title": "mirror",
+  "price": "500",
+  "image": {
+    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/frekk-zerkalo__26262_PE092247_S4.JPG",
+    "width": "300px",
+    "height": "300px"
+  }
 }];
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
@@ -20320,9 +20323,9 @@ var _catalog = require("./src/components/catalog");
 
 var _catalog2 = _interopRequireDefault(_catalog);
 
-var _basket = require("./src/components/basket");
+var _cart = require("./src/components/cart");
 
-var _basket2 = _interopRequireDefault(_basket);
+var _cart2 = _interopRequireDefault(_cart);
 
 var _reactDom = require("react-dom");
 
@@ -20342,85 +20345,64 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Header = function (_Component) {
-    _inherits(Header, _Component);
+var App = function (_Component) {
+  _inherits(App, _Component);
 
-    function Header() {
-        _classCallCheck(this, Header);
+  function App(props) {
+    _classCallCheck(this, App);
 
-        return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+    _this.state = { cart: [], products: _Products2.default };
+    _this.addToCart = _this.addToCart.bind(_this);
+    return _this;
+  }
+
+  _createClass(App, [{
+    key: "addToCart",
+    value: function addToCart(product) {
+      var _JSON$parse = JSON.parse(JSON.stringify(this.state)),
+          cart = _JSON$parse.cart;
+
+      var idx = cart.find(function (item) {
+        return product.id === item.id;
+      });
+
+      if (idx == null) {
+        cart.push(product);
+      }
+      this.setState({ cart: cart });
     }
-
-    _createClass(Header, [{
-        key: "render",
-        value: function render() {
-            return _react2.default.createElement(
-                "div",
-                {
-                    style: {
-                        border: '1px solid #000',
-                        marginTop: '34px',
-                        textAlign: 'center' }
-                },
-                this.props.children
-            );
-        }
-    }]);
-
-    return Header;
-}(_react.Component);
-
-var App = function (_Component2) {
-    _inherits(App, _Component2);
-
-    function App(props) {
-        _classCallCheck(this, App);
-
-        var _this2 = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
-
-        _this2.state = { cart: [], products: _Products2.default };
-        _this2.addToCart = _this2.addToCart.bind(_this2);
-        return _this2;
+  }, {
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(
+          _context.Provider,
+          { value: {
+              cart: this.state.cart
+            } },
+          _react2.default.createElement(_cart2.default, null)
+        ),
+        _react2.default.createElement(
+          _context.Provider,
+          { value: {
+              products: this.state.products,
+              addToCart: this.addToCart
+            } },
+          _react2.default.createElement(_catalog2.default, null)
+        )
+      );
     }
+  }]);
 
-    _createClass(App, [{
-        key: "addToCart",
-        value: function addToCart(product) {
-            var _Object$assign = Object.assign({}, this.state),
-                cart = _Object$assign.cart;
-
-            var idx = cart.indexOf(product);
-            if (idx === -1) {
-                cart.push(product);
-            }
-            this.setState({ cart: cart });
-        }
-    }, {
-        key: "render",
-        value: function render() {
-            return _react2.default.createElement(
-                "div",
-                null,
-                _react2.default.createElement(
-                    _context.Provider,
-                    { value: {
-                            cart: this.state.cart,
-                            products: this.state.products,
-                            clickOnBtn: this.addToCart
-
-                        } },
-                    _react2.default.createElement(_basket2.default, null),
-                    _react2.default.createElement(_catalog2.default, null)
-                )
-            );
-        }
-    }]);
-
-    return App;
+  return App;
 }(_react.Component);
 
 _reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('root'));
-},{"react":"node_modules\\react\\index.js","./src/components/catalog":"src\\components\\catalog.js","./src/components/basket":"src\\components\\basket.js","react-dom":"node_modules\\react-dom\\index.js","./src/context/context":"src\\context\\context.js","./src/constants/Products":"src\\constants\\Products.js"}],"..\\AppData\\Roaming\\npm\\node_modules\\parcel-bundler\\src\\builtins\\hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules\\react\\index.js","./src/components/catalog":"src\\components\\catalog.js","./src/components/cart":"src\\components\\cart.js","react-dom":"node_modules\\react-dom\\index.js","./src/context/context":"src\\context\\context.js","./src/constants/Products":"src\\constants\\Products.js"}],"..\\AppData\\Roaming\\npm\\node_modules\\parcel-bundler\\src\\builtins\\hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -20449,7 +20431,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '60345' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '50445' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
