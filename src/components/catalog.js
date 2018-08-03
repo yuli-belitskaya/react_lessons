@@ -1,19 +1,23 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import ProductCard from "./product_card";
-import productsList from "../constants/Products";
+import ProductContext from "../context/product_context";
 
 class Catalog extends Component {
-    render() {
-        const products = productsList.map((item) => {
-            return <ProductCard key={item.id} product={item}/>
-        });
-        return (
-            <div style={{ background: '#f4fd5e'}}>
-                {products}
-            </div>
-            )
-
-    }
+  render() {
+    return (
+      <div style={{background: '#f4fd5e', marginTop: '33px'}}>
+        <ProductContext.Consumer>
+          {
+            ({products}) => {
+              return products.map((item) => {
+                return <ProductCard key={item.id} product={item}/>
+              });
+            }
+          }
+        </ProductContext.Consumer>
+      </div>
+    )
+  }
 }
 
 export default Catalog;
