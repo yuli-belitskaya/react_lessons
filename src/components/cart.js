@@ -2,28 +2,39 @@ import React, {Component} from 'react';
 import CartContext from "../context/cart_context";
 
 const cartStyle = {
-  background: 'rgb(84, 137, 162)',
+  background: 'rgb(84, 137, 177)',
   position: 'fixed',
   top: '0',
-  left: '0',
   right: '0',
   color: '#fff',
   fontWeight: '700',
   fontSize: '20px',
+  width: '100px',
   padding: '5px',
+  zIndex: '5',
 };
 
 class Cart extends Component {
   render() {
     return (
-      <div style={cartStyle}>
+      <div>
         <CartContext.Consumer>
           {
             ({cart}) => {
+              console.log(cart.addToCart);
+              console.log(cart);
               return (
-                <div style={{width: '100%'}}>
-                  Корзина: {cart.length}
+                <div>
+                  <div style={cartStyle}>
+                    Корзина: {cart.length}
+                  </div>
+                  <div style={{background: '#000'}}>
+                    {cart}
+                  </div>
+
+
                 </div>
+
               )
             }
           }

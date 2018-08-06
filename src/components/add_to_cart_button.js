@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ProductContext from "../context/product_context";
+import CartContext from "../context/cart_context";
 
 const btnStyle = {
   color: '#fff',
@@ -16,7 +16,7 @@ const btnStyle = {
 class AddToCartButton extends Component {
   render() {
     return (
-      <ProductContext.Consumer>
+      <CartContext.Consumer>
         {
           ({addToCart}) => {
             return (
@@ -28,7 +28,7 @@ class AddToCartButton extends Component {
             )
           }
         }
-      </ProductContext.Consumer>
+      </CartContext.Consumer>
     )
   }
 }
