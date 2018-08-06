@@ -1,15 +1,30 @@
 import React, {Component} from 'react';
-import Catalog from "./src/components/catalog";
-import Cart from "./src/components/cart";
+import Menu from "./src/components/menu";
 import ReactDOM from 'react-dom';
 import CartContext from "./src/context/cart_context";
-import ProductContext from "./src/context/product_context";
-import productsList from "./src/constants/Products";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import cartRoute from "./src/routes/cartRoute";
+import catalogRoute from "./src/routes/catalogRoute";
+import contactsRoute from "./src/routes/contactsRoute";
+import productRoute from "./src/routes/productRoute";
+import NotFound from "./src/components/not_found";
+import CartInCatalog from "./src/components/cart_in_catalog";
+
+const routes = [cartRoute, catalogRoute, contactsRoute, productRoute];
+
+const RouteWithSubRoutes = route => (
+  <Route
+    path={route.path}
+    render={props => {
+      return <route.component {...props} routes={route.routes} />
+    }}
+  />
+);
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {cart: [], products: productsList};
+    this.state = {cart: [] };
     this.addToCart = this.addToCart.bind(this);
   }
 
@@ -28,22 +43,27 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <CartContext.Provider value={{
-          cart: this.state.cart
-        }}>
-          <Cart/>
-        </CartContext.Provider>
-        <ProductContext.Provider value={{
-          products: this.state.products,
-          addToCart: this.addToCart,
-        }}>
-          <Catalog/>
-        </ProductContext.Provider>
-      </div>
-    );
-  }
-}
+      <Router>
+        <Switch>
+          <Menu>
+            <CartContext.Provider value={{
+              cart: this.state.cart,
+              addToCart: this.addToCart,
+            }}>
+              <CartInCatalog />
+              {routes.map((route, i) =>
+                <RouteWithSubRoutes
+                  key={i} {...route}
+                />
+              )}
+              <Route path="*" component={NotFound} />
+            </CartContext.Provider>
+          </Menu>
+         </Switch>
+       </Router>
+     );
+   }
+ }
 
 ReactDOM.render(
   <App/>,
