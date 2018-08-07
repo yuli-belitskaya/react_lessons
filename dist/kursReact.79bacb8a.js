@@ -460,7 +460,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 
 module.exports = checkPropTypes;
 },{"./lib/ReactPropTypesSecret":"node_modules\\prop-types\\lib\\ReactPropTypesSecret.js"}],"node_modules\\react\\cjs\\react.development.js":[function(require,module,exports) {
-/** @license React v16.4.1
+/** @license React v16.4.2
  * react.development.js
  *
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -484,7 +484,7 @@ if ('development' !== "production") {
 
     // TODO: this is special because it gets imported during build.
 
-    var ReactVersion = '16.4.1';
+    var ReactVersion = '16.4.2';
 
     // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
     // nor polyfill, then a plain number is used for performance.
@@ -1948,493 +1948,7 @@ if ('development' === 'production') {
 } else {
   module.exports = require('./cjs/react.development.js');
 }
-},{"./cjs/react.development.js":"node_modules\\react\\cjs\\react.development.js"}],"src\\components\\image.js":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Image = function (_Component) {
-  _inherits(Image, _Component);
-
-  function Image() {
-    _classCallCheck(this, Image);
-
-    return _possibleConstructorReturn(this, (Image.__proto__ || Object.getPrototypeOf(Image)).apply(this, arguments));
-  }
-
-  _createClass(Image, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          _props$image = _props.image,
-          imageUrl = _props$image.imageUrl,
-          width = _props$image.width,
-          height = _props$image.height,
-          title = _props.title;
-
-      return _react2.default.createElement('img', { src: imageUrl, style: { width: width, height: height }, alt: title });
-    }
-  }]);
-
-  return Image;
-}(_react.Component);
-
-exports.default = Image;
-},{"react":"node_modules\\react\\index.js"}],"src\\components\\textbox.js":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var TextBox = function (_Component) {
-  _inherits(TextBox, _Component);
-
-  function TextBox() {
-    _classCallCheck(this, TextBox);
-
-    return _possibleConstructorReturn(this, (TextBox.__proto__ || Object.getPrototypeOf(TextBox)).apply(this, arguments));
-  }
-
-  _createClass(TextBox, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { style: {
-            textAlign: 'center',
-            fontSize: '20px',
-            fontWeight: 'bold',
-            margin: '5px 0',
-            color: '#001e5d'
-          } },
-        this.props.title
-      );
-    }
-  }]);
-
-  return TextBox;
-}(_react.Component);
-
-exports.default = TextBox;
-},{"react":"node_modules\\react\\index.js"}],"src\\components\\price.js":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Price = function (_Component) {
-  _inherits(Price, _Component);
-
-  function Price() {
-    _classCallCheck(this, Price);
-
-    return _possibleConstructorReturn(this, (Price.__proto__ || Object.getPrototypeOf(Price)).apply(this, arguments));
-  }
-
-  _createClass(Price, [{
-    key: 'render',
-    value: function render() {
-      var price = new Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB' }).format(this.props.price);
-      return _react2.default.createElement(
-        'div',
-        { style: {
-            textAlign: 'center',
-            fontSize: '30px',
-            margin: '5px 0',
-            fontWeight: 'bold',
-            color: '#980214'
-          } },
-        price
-      );
-    }
-  }]);
-
-  return Price;
-}(_react.Component);
-
-exports.default = Price;
-},{"react":"node_modules\\react\\index.js"}],"src\\context\\cart_context.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var context = _react2.default.createContext();
-exports.default = context;
-},{"react":"node_modules\\react\\index.js"}],"src\\components\\add_to_cart_button.js":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _cart_context = require('../context/cart_context');
-
-var _cart_context2 = _interopRequireDefault(_cart_context);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var btnStyle = {
-  color: '#fff',
-  background: '#00435a',
-  display: 'block',
-  margin: '10px auto',
-  padding: '5px 20px',
-  fontSize: '20px',
-  border: 'none',
-  outline: 'none',
-  borderRadius: '20px'
-};
-
-var AddToCartButton = function (_Component) {
-  _inherits(AddToCartButton, _Component);
-
-  function AddToCartButton() {
-    _classCallCheck(this, AddToCartButton);
-
-    return _possibleConstructorReturn(this, (AddToCartButton.__proto__ || Object.getPrototypeOf(AddToCartButton)).apply(this, arguments));
-  }
-
-  _createClass(AddToCartButton, [{
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      return _react2.default.createElement(
-        _cart_context2.default.Consumer,
-        null,
-        function (_ref) {
-          var addToCart = _ref.addToCart;
-
-          return _react2.default.createElement(
-            'button',
-            { style: btnStyle,
-              onClick: function onClick() {
-                addToCart(_this2.props.product);
-              } },
-            'BUY'
-          );
-        }
-      );
-    }
-  }]);
-
-  return AddToCartButton;
-}(_react.Component);
-
-exports.default = AddToCartButton;
-},{"react":"node_modules\\react\\index.js","../context/cart_context":"src\\context\\cart_context.js"}],"src\\components\\product_card.js":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _image = require('./image');
-
-var _image2 = _interopRequireDefault(_image);
-
-var _textbox = require('./textbox');
-
-var _textbox2 = _interopRequireDefault(_textbox);
-
-var _price = require('./price');
-
-var _price2 = _interopRequireDefault(_price);
-
-var _add_to_cart_button = require('./add_to_cart_button');
-
-var _add_to_cart_button2 = _interopRequireDefault(_add_to_cart_button);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var prodCardStyle = {
-  border: '2px solid #09c9ee',
-  background: '#fff',
-  display: 'inline-block',
-  margin: '5px'
-};
-
-var ProductCard = function (_Component) {
-  _inherits(ProductCard, _Component);
-
-  function ProductCard() {
-    _classCallCheck(this, ProductCard);
-
-    return _possibleConstructorReturn(this, (ProductCard.__proto__ || Object.getPrototypeOf(ProductCard)).apply(this, arguments));
-  }
-
-  _createClass(ProductCard, [{
-    key: 'render',
-    value: function render() {
-      var _props$product = this.props.product,
-          title = _props$product.title,
-          price = _props$product.price,
-          image = _props$product.image;
-
-      return _react2.default.createElement(
-        'span',
-        {
-          style: prodCardStyle
-        },
-        _react2.default.createElement(_image2.default, {
-          title: title,
-          image: image
-        }),
-        _react2.default.createElement(_textbox2.default, { title: title }),
-        _react2.default.createElement(_price2.default, { price: price }),
-        _react2.default.createElement(_add_to_cart_button2.default, { product: this.props.product })
-      );
-    }
-  }]);
-
-  return ProductCard;
-}(_react.Component);
-
-exports.default = ProductCard;
-},{"react":"node_modules\\react\\index.js","./image":"src\\components\\image.js","./textbox":"src\\components\\textbox.js","./price":"src\\components\\price.js","./add_to_cart_button":"src\\components\\add_to_cart_button.js"}],"src\\constants\\Products.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = [{
-  "id": 1,
-  "title": "cup",
-  "price": "130",
-  "image": {
-    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/ikea-kruzka-belyj__0328951_PE520152_S4.JPG",
-    "width": "300px",
-    "height": "300px"
-  }
-}, {
-  "id": 2,
-  "title": "pillow",
-  "price": "600",
-  "image": {
-    "imageUrl": "https://www.ikea.com\/ru\/ru\/images\/products\/ursula-cehol-na-podusku__0503667_PE632848_S4.JPG",
-    "width": "300px",
-    "height": "300px"
-  }
-}, {
-  "id": 3,
-  "title": "box",
-  "price": "100",
-  "image": {
-    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/pingla-korobka-s-kryskoj-cernyj__0398498_PE563788_S4.JPG",
-    "width": "300px",
-    "height": "300px"
-  }
-}, {
-  "id": 4,
-  "title": "plate",
-  "price": "100",
-  "image": {
-    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/vardagen-tarelka-seryj__0445947_PE596164_S4.JPG",
-    "width": "300px",
-    "height": "300px"
-  }
-}, {
-  "id": 5,
-  "title": "frame",
-  "price": "150",
-  "image": {
-    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/virserum-rama-zeltyj__0202741_PE359077_S4.JPG",
-    "width": "300px",
-    "height": "300px"
-  }
-}, {
-  "id": 6,
-  "title": "plaid",
-  "price": "400",
-  "image": {
-    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/lizamari-pled-sinij__0491584_PE625239_S4.JPG",
-    "width": "300px",
-    "height": "300px"
-  }
-}, {
-  "id": 7,
-  "title": "curtains",
-  "price": "2000",
-  "image": {
-    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/mariatistel-gardiny-para-zeltyj__0399387_PE564432_S4.JPG",
-    "width": "300px",
-    "height": "300px"
-  }
-}, {
-  "id": 8,
-  "title": "chair",
-  "price": "2900",
-  "image": {
-    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/sven-bertil-stul-cernyj__0483195_PE620715_S4.JPG",
-    "width": "300px",
-    "height": "300px"
-  }
-}, {
-  "id": 9,
-  "title": "sofa",
-  "price": "13000",
-  "image": {
-    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/klippan-divan-mestnyj-raznye-cveta__0562992_PE663645_S4.JPG",
-    "width": "300px",
-    "height": "300px"
-  }
-}, {
-  "id": 10,
-  "title": "bed",
-  "price": "22000",
-  "image": {
-    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/nordli-karkas-krovati-s-asikami-belyj__0494839_PE627362_S4.JPG",
-    "width": "300px",
-    "height": "300px"
-  }
-}, {
-  "id": 11,
-  "title": "mirror",
-  "price": "500",
-  "image": {
-    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/frekk-zerkalo__26262_PE092247_S4.JPG",
-    "width": "300px",
-    "height": "300px"
-  }
-}];
-},{}],"src\\components\\catalog.js":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _product_card = require('./product_card');
-
-var _product_card2 = _interopRequireDefault(_product_card);
-
-var _Products = require('../constants/Products');
-
-var _Products2 = _interopRequireDefault(_Products);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Catalog = function (_Component) {
-  _inherits(Catalog, _Component);
-
-  function Catalog() {
-    _classCallCheck(this, Catalog);
-
-    var _this = _possibleConstructorReturn(this, (Catalog.__proto__ || Object.getPrototypeOf(Catalog)).call(this));
-
-    _this.state = { products: _Products2.default };
-    return _this;
-  }
-
-  _createClass(Catalog, [{
-    key: 'render',
-    value: function render() {
-      var products = this.state.products.map(function (item) {
-        return _react2.default.createElement(_product_card2.default, { key: item.id, product: item });
-      });
-      return _react2.default.createElement(
-        'div',
-        { style: { background: '#f4fd5e' } },
-        products
-      );
-    }
-  }]);
-
-  return Catalog;
-}(_react.Component);
-
-exports.default = Catalog;
-},{"react":"node_modules\\react\\index.js","./product_card":"src\\components\\product_card.js","../constants/Products":"src\\constants\\Products.js"}],"node_modules\\warning\\warning.js":[function(require,module,exports) {
+},{"./cjs/react.development.js":"node_modules\\react\\cjs\\react.development.js"}],"node_modules\\warning\\warning.js":[function(require,module,exports) {
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -6922,93 +6436,7 @@ var Menu = function (_Component) {
 }(_react.Component);
 
 exports.default = Menu;
-},{"react":"node_modules\\react\\index.js","../components/link":"src\\components\\link.js"}],"src\\components\\cart.js":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _cart_context = require('../context/cart_context');
-
-var _cart_context2 = _interopRequireDefault(_cart_context);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var cartStyle = {
-  background: 'rgb(84, 137, 177)',
-  position: 'fixed',
-  top: '0',
-  right: '0',
-  color: '#fff',
-  fontWeight: '700',
-  fontSize: '20px',
-  width: '100px',
-  padding: '5px',
-  zIndex: '5'
-};
-
-var Cart = function (_Component) {
-  _inherits(Cart, _Component);
-
-  function Cart() {
-    _classCallCheck(this, Cart);
-
-    return _possibleConstructorReturn(this, (Cart.__proto__ || Object.getPrototypeOf(Cart)).apply(this, arguments));
-  }
-
-  _createClass(Cart, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          _cart_context2.default.Consumer,
-          null,
-          function (_ref) {
-            var cart = _ref.cart;
-
-            console.log(cart.addToCart);
-            console.log(cart);
-            return _react2.default.createElement(
-              'div',
-              null,
-              _react2.default.createElement(
-                'div',
-                { style: cartStyle },
-                '\u041A\u043E\u0440\u0437\u0438\u043D\u0430: ',
-                cart.length
-              ),
-              _react2.default.createElement(
-                'div',
-                { style: { background: '#000' } },
-                cart
-              )
-            );
-          }
-        )
-      );
-    }
-  }]);
-
-  return Cart;
-}(_react.Component);
-
-exports.default = Cart;
-},{"react":"node_modules\\react\\index.js","../context/cart_context":"src\\context\\cart_context.js"}],"node_modules\\fbjs\\lib\\ExecutionEnvironment.js":[function(require,module,exports) {
+},{"react":"node_modules\\react\\index.js","../components/link":"src\\components\\link.js"}],"node_modules\\fbjs\\lib\\ExecutionEnvironment.js":[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -24807,7 +24235,677 @@ if ('development' === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules\\react-dom\\cjs\\react-dom.development.js"}],"src\\contacts\\contacts.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules\\react-dom\\cjs\\react-dom.development.js"}],"src\\context\\cart_context.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var context = _react2.default.createContext();
+exports.default = context;
+},{"react":"node_modules\\react\\index.js"}],"src\\components\\cart_item.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function (_ref) {
+  var _ref$product = _ref.product,
+      title = _ref$product.title,
+      price = _ref$product.price,
+      imageUrl = _ref$product.image.imageUrl;
+
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'p',
+      null,
+      '\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435: ',
+      title
+    ),
+    _react2.default.createElement(
+      'p',
+      null,
+      '\u0426\u0435\u043D\u0430: ',
+      price
+    ),
+    _react2.default.createElement(
+      'p',
+      null,
+      _react2.default.createElement('img', { style: { maxWidth: '100px' }, src: imageUrl })
+    )
+  );
+};
+},{"react":"node_modules\\react\\index.js"}],"src\\components\\cart.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _cart_context = require("../context/cart_context");
+
+var _cart_context2 = _interopRequireDefault(_cart_context);
+
+var _cart_item = require("./cart_item");
+
+var _cart_item2 = _interopRequireDefault(_cart_item);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Cart = function (_Component) {
+  _inherits(Cart, _Component);
+
+  function Cart() {
+    _classCallCheck(this, Cart);
+
+    return _possibleConstructorReturn(this, (Cart.__proto__ || Object.getPrototypeOf(Cart)).apply(this, arguments));
+  }
+
+  _createClass(Cart, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(
+          _cart_context2.default.Consumer,
+          null,
+          function (_ref) {
+            var cart = _ref.cart;
+
+            var products = cart.map(function (product) {
+              return _react2.default.createElement(_cart_item2.default, { key: product.id, product: product });
+            });
+            return _react2.default.createElement(
+              "div",
+              null,
+              _react2.default.createElement(
+                "div",
+                null,
+                products
+              )
+            );
+          }
+        )
+      );
+    }
+  }]);
+
+  return Cart;
+}(_react.Component);
+
+exports.default = Cart;
+},{"react":"node_modules\\react\\index.js","../context/cart_context":"src\\context\\cart_context.js","./cart_item":"src\\components\\cart_item.js"}],"src\\routes\\routes.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var contactsPath = exports.contactsPath = function contactsPath() {
+  return '/contacts';
+};
+var catalogPath = exports.catalogPath = function catalogPath() {
+  return '/catalog';
+};
+var cartPath = exports.cartPath = function cartPath() {
+  return '/cart';
+};
+var productPath = exports.productPath = function productPath() {
+  var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : ':id';
+  return '/products/$(id)';
+};
+},{}],"src\\routes\\cartRoute.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _cart = require('../components/cart');
+
+var _cart2 = _interopRequireDefault(_cart);
+
+var _routes = require('../routes/routes');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  name: 'Cart',
+  exact: true,
+  strict: true,
+  path: (0, _routes.cartPath)(),
+  component: _cart2.default
+};
+},{"react":"node_modules\\react\\index.js","../components/cart":"src\\components\\cart.js","../routes/routes":"src\\routes\\routes.js"}],"src\\components\\image.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Image = function (_Component) {
+  _inherits(Image, _Component);
+
+  function Image() {
+    _classCallCheck(this, Image);
+
+    return _possibleConstructorReturn(this, (Image.__proto__ || Object.getPrototypeOf(Image)).apply(this, arguments));
+  }
+
+  _createClass(Image, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          _props$image = _props.image,
+          imageUrl = _props$image.imageUrl,
+          width = _props$image.width,
+          height = _props$image.height,
+          title = _props.title;
+
+      return _react2.default.createElement('img', { src: imageUrl, style: { width: width, height: height }, alt: title });
+    }
+  }]);
+
+  return Image;
+}(_react.Component);
+
+exports.default = Image;
+},{"react":"node_modules\\react\\index.js"}],"src\\components\\textbox.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var TextBox = function (_Component) {
+  _inherits(TextBox, _Component);
+
+  function TextBox() {
+    _classCallCheck(this, TextBox);
+
+    return _possibleConstructorReturn(this, (TextBox.__proto__ || Object.getPrototypeOf(TextBox)).apply(this, arguments));
+  }
+
+  _createClass(TextBox, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { style: {
+            textAlign: 'center',
+            fontSize: '20px',
+            fontWeight: 'bold',
+            margin: '5px 0',
+            color: '#001e5d'
+          } },
+        this.props.title
+      );
+    }
+  }]);
+
+  return TextBox;
+}(_react.Component);
+
+exports.default = TextBox;
+},{"react":"node_modules\\react\\index.js"}],"src\\components\\price.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Price = function (_Component) {
+  _inherits(Price, _Component);
+
+  function Price() {
+    _classCallCheck(this, Price);
+
+    return _possibleConstructorReturn(this, (Price.__proto__ || Object.getPrototypeOf(Price)).apply(this, arguments));
+  }
+
+  _createClass(Price, [{
+    key: 'render',
+    value: function render() {
+      var price = new Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB' }).format(this.props.price);
+      return _react2.default.createElement(
+        'div',
+        { style: {
+            textAlign: 'center',
+            fontSize: '30px',
+            margin: '5px 0',
+            fontWeight: 'bold',
+            color: '#980214'
+          } },
+        price
+      );
+    }
+  }]);
+
+  return Price;
+}(_react.Component);
+
+exports.default = Price;
+},{"react":"node_modules\\react\\index.js"}],"src\\components\\add_to_cart_button.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _cart_context = require('../context/cart_context');
+
+var _cart_context2 = _interopRequireDefault(_cart_context);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var btnStyle = {
+  color: '#fff',
+  background: '#00435a',
+  display: 'block',
+  margin: '10px auto',
+  padding: '5px 20px',
+  fontSize: '20px',
+  border: 'none',
+  outline: 'none',
+  borderRadius: '20px'
+};
+
+var AddToCartButton = function (_Component) {
+  _inherits(AddToCartButton, _Component);
+
+  function AddToCartButton() {
+    _classCallCheck(this, AddToCartButton);
+
+    return _possibleConstructorReturn(this, (AddToCartButton.__proto__ || Object.getPrototypeOf(AddToCartButton)).apply(this, arguments));
+  }
+
+  _createClass(AddToCartButton, [{
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement(
+        _cart_context2.default.Consumer,
+        null,
+        function (_ref) {
+          var addToCart = _ref.addToCart;
+
+          return _react2.default.createElement(
+            'button',
+            { style: btnStyle,
+              onClick: function onClick() {
+                addToCart(_this2.props.product);
+              } },
+            'BUY'
+          );
+        }
+      );
+    }
+  }]);
+
+  return AddToCartButton;
+}(_react.Component);
+
+exports.default = AddToCartButton;
+},{"react":"node_modules\\react\\index.js","../context/cart_context":"src\\context\\cart_context.js"}],"src\\components\\product_card.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _image = require('./image');
+
+var _image2 = _interopRequireDefault(_image);
+
+var _textbox = require('./textbox');
+
+var _textbox2 = _interopRequireDefault(_textbox);
+
+var _price = require('./price');
+
+var _price2 = _interopRequireDefault(_price);
+
+var _add_to_cart_button = require('./add_to_cart_button');
+
+var _add_to_cart_button2 = _interopRequireDefault(_add_to_cart_button);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var prodCardStyle = {
+  border: '2px solid #09c9ee',
+  background: '#fff',
+  display: 'inline-block',
+  margin: '5px'
+};
+
+var ProductCard = function (_Component) {
+  _inherits(ProductCard, _Component);
+
+  function ProductCard() {
+    _classCallCheck(this, ProductCard);
+
+    return _possibleConstructorReturn(this, (ProductCard.__proto__ || Object.getPrototypeOf(ProductCard)).apply(this, arguments));
+  }
+
+  _createClass(ProductCard, [{
+    key: 'render',
+    value: function render() {
+      var _props$product = this.props.product,
+          title = _props$product.title,
+          price = _props$product.price,
+          image = _props$product.image;
+
+      return _react2.default.createElement(
+        'span',
+        {
+          style: prodCardStyle
+        },
+        _react2.default.createElement(_image2.default, {
+          title: title,
+          image: image
+        }),
+        _react2.default.createElement(_textbox2.default, { title: title }),
+        _react2.default.createElement(_price2.default, { price: price }),
+        _react2.default.createElement(_add_to_cart_button2.default, { product: this.props.product })
+      );
+    }
+  }]);
+
+  return ProductCard;
+}(_react.Component);
+
+exports.default = ProductCard;
+},{"react":"node_modules\\react\\index.js","./image":"src\\components\\image.js","./textbox":"src\\components\\textbox.js","./price":"src\\components\\price.js","./add_to_cart_button":"src\\components\\add_to_cart_button.js"}],"src\\constants\\Products.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = [{
+  "id": 1,
+  "title": "cup",
+  "price": "130",
+  "image": {
+    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/ikea-kruzka-belyj__0328951_PE520152_S4.JPG",
+    "width": "300px",
+    "height": "300px"
+  }
+}, {
+  "id": 2,
+  "title": "pillow",
+  "price": "600",
+  "image": {
+    "imageUrl": "https://www.ikea.com\/ru\/ru\/images\/products\/ursula-cehol-na-podusku__0503667_PE632848_S4.JPG",
+    "width": "300px",
+    "height": "300px"
+  }
+}, {
+  "id": 3,
+  "title": "box",
+  "price": "100",
+  "image": {
+    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/pingla-korobka-s-kryskoj-cernyj__0398498_PE563788_S4.JPG",
+    "width": "300px",
+    "height": "300px"
+  }
+}, {
+  "id": 4,
+  "title": "plate",
+  "price": "100",
+  "image": {
+    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/vardagen-tarelka-seryj__0445947_PE596164_S4.JPG",
+    "width": "300px",
+    "height": "300px"
+  }
+}, {
+  "id": 5,
+  "title": "frame",
+  "price": "150",
+  "image": {
+    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/virserum-rama-zeltyj__0202741_PE359077_S4.JPG",
+    "width": "300px",
+    "height": "300px"
+  }
+}, {
+  "id": 6,
+  "title": "plaid",
+  "price": "400",
+  "image": {
+    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/lizamari-pled-sinij__0491584_PE625239_S4.JPG",
+    "width": "300px",
+    "height": "300px"
+  }
+}, {
+  "id": 7,
+  "title": "curtains",
+  "price": "2000",
+  "image": {
+    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/mariatistel-gardiny-para-zeltyj__0399387_PE564432_S4.JPG",
+    "width": "300px",
+    "height": "300px"
+  }
+}, {
+  "id": 8,
+  "title": "chair",
+  "price": "2900",
+  "image": {
+    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/sven-bertil-stul-cernyj__0483195_PE620715_S4.JPG",
+    "width": "300px",
+    "height": "300px"
+  }
+}, {
+  "id": 9,
+  "title": "sofa",
+  "price": "13000",
+  "image": {
+    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/klippan-divan-mestnyj-raznye-cveta__0562992_PE663645_S4.JPG",
+    "width": "300px",
+    "height": "300px"
+  }
+}, {
+  "id": 10,
+  "title": "bed",
+  "price": "22000",
+  "image": {
+    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/nordli-karkas-krovati-s-asikami-belyj__0494839_PE627362_S4.JPG",
+    "width": "300px",
+    "height": "300px"
+  }
+}, {
+  "id": 11,
+  "title": "mirror",
+  "price": "500",
+  "image": {
+    "imageUrl": "https:\/\/www.ikea.com\/ru\/ru\/images\/products\/frekk-zerkalo__26262_PE092247_S4.JPG",
+    "width": "300px",
+    "height": "300px"
+  }
+}];
+},{}],"src\\components\\catalog.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _product_card = require('./product_card');
+
+var _product_card2 = _interopRequireDefault(_product_card);
+
+var _Products = require('../constants/Products');
+
+var _Products2 = _interopRequireDefault(_Products);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Catalog = function (_Component) {
+  _inherits(Catalog, _Component);
+
+  function Catalog() {
+    _classCallCheck(this, Catalog);
+
+    var _this = _possibleConstructorReturn(this, (Catalog.__proto__ || Object.getPrototypeOf(Catalog)).call(this));
+
+    _this.state = { products: _Products2.default };
+    return _this;
+  }
+
+  _createClass(Catalog, [{
+    key: 'render',
+    value: function render() {
+      var products = this.state.products.map(function (item) {
+        return _react2.default.createElement(_product_card2.default, { key: item.id, product: item });
+      });
+      return _react2.default.createElement(
+        'div',
+        { style: { background: '#f4fd5e' } },
+        products
+      );
+    }
+  }]);
+
+  return Catalog;
+}(_react.Component);
+
+exports.default = Catalog;
+},{"react":"node_modules\\react\\index.js","./product_card":"src\\components\\product_card.js","../constants/Products":"src\\constants\\Products.js"}],"src\\routes\\catalogRoute.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _catalog = require('../components/catalog');
+
+var _catalog2 = _interopRequireDefault(_catalog);
+
+var _routes = require('../routes/routes');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  name: 'Catalog',
+  exact: true,
+  strict: true,
+  path: (0, _routes.catalogPath)(),
+  component: _catalog2.default
+};
+},{"react":"node_modules\\react\\index.js","../components/catalog":"src\\components\\catalog.js","../routes/routes":"src\\routes\\routes.js"}],"src\\contacts\\contacts.js":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24854,93 +24952,7 @@ var Contacts = function (_Component) {
 }(_react.Component);
 
 exports.default = Contacts;
-},{"react":"node_modules\\react\\index.js"}],"src\\context\\product_context.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var context = _react2.default.createContext();
-exports.default = context;
-},{"react":"node_modules\\react\\index.js"}],"src\\routes\\routes.js":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var contactsPath = exports.contactsPath = function contactsPath() {
-  return '/contacts';
-};
-var catalogPath = exports.catalogPath = function catalogPath() {
-  return '/catalog';
-};
-var cartPath = exports.cartPath = function cartPath() {
-  return '/cart';
-};
-var productPath = exports.productPath = function productPath() {
-  var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : ':id';
-  return '/products/$(id)';
-};
-},{}],"src\\routes\\cartRoute.js":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _cart = require('../components/cart');
-
-var _cart2 = _interopRequireDefault(_cart);
-
-var _routes = require('../routes/routes');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  name: 'Cart',
-  exact: true,
-  strict: true,
-  path: (0, _routes.cartPath)(),
-  component: _cart2.default
-};
-},{"react":"node_modules\\react\\index.js","../components/cart":"src\\components\\cart.js","../routes/routes":"src\\routes\\routes.js"}],"src\\routes\\catalogRoute.js":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _catalog = require('../components/catalog');
-
-var _catalog2 = _interopRequireDefault(_catalog);
-
-var _routes = require('../routes/routes');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  name: 'Catalog',
-  exact: true,
-  strict: true,
-  path: (0, _routes.catalogPath)(),
-  component: _catalog2.default
-};
-},{"react":"node_modules\\react\\index.js","../components/catalog":"src\\components\\catalog.js","../routes/routes":"src\\routes\\routes.js"}],"src\\routes\\contactsRoute.js":[function(require,module,exports) {
+},{"react":"node_modules\\react\\index.js"}],"src\\routes\\contactsRoute.js":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24992,62 +25004,178 @@ exports.default = {
   path: (0, _routes.productPath)(),
   component: _product_card2.default
 };
-},{"react":"node_modules\\react\\index.js","../components/product_card":"src\\components\\product_card.js","../routes/routes":"src\\routes\\routes.js"}],"index.js":[function(require,module,exports) {
-"use strict";
+},{"react":"node_modules\\react\\index.js","../components/product_card":"src\\components\\product_card.js","../routes/routes":"src\\routes\\routes.js"}],"src\\components\\not_found.js":[function(require,module,exports) {
+'use strict';
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _catalog = require("./src/components/catalog");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _catalog2 = _interopRequireDefault(_catalog);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var _menu = require("./src/components/menu");
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-var _menu2 = _interopRequireDefault(_menu);
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _cart = require("./src/components/cart");
+var NotFound = function (_Component) {
+  _inherits(NotFound, _Component);
 
-var _cart2 = _interopRequireDefault(_cart);
+  function NotFound() {
+    _classCallCheck(this, NotFound);
 
-var _reactDom = require("react-dom");
+    return _possibleConstructorReturn(this, (NotFound.__proto__ || Object.getPrototypeOf(NotFound)).apply(this, arguments));
+  }
 
-var _reactDom2 = _interopRequireDefault(_reactDom);
+  _createClass(NotFound, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { style: { background: '#20d1fd', padding: '100px', textAlign: 'center' } },
+        '\u043D\u0438\u0447\u0435\u0433\u043E \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D\u043E'
+      );
+    }
+  }]);
 
-var _cart_context = require("./src/context/cart_context");
+  return NotFound;
+}(_react.Component);
+
+exports.default = NotFound;
+},{"react":"node_modules\\react\\index.js"}],"src\\components\\cart_in_catalog.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _cart_context = require('../context/cart_context');
 
 var _cart_context2 = _interopRequireDefault(_cart_context);
 
-var _contacts = require("./src/contacts/contacts");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _contacts2 = _interopRequireDefault(_contacts);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var _product_context = require("./src/context/product_context");
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-var _product_context2 = _interopRequireDefault(_product_context);
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _reactRouterDom = require("react-router-dom");
+var cartStyle = {
+  background: 'rgb(84, 137, 177)',
+  position: 'fixed',
+  top: '0',
+  right: '0',
+  color: '#fff',
+  fontWeight: '700',
+  fontSize: '20px',
+  width: '200px',
+  padding: '5px',
+  zIndex: '5'
+};
 
-var _cartRoute = require("./src/routes/cartRoute");
+var CartInCatalog = function (_Component) {
+  _inherits(CartInCatalog, _Component);
+
+  function CartInCatalog() {
+    _classCallCheck(this, CartInCatalog);
+
+    return _possibleConstructorReturn(this, (CartInCatalog.__proto__ || Object.getPrototypeOf(CartInCatalog)).apply(this, arguments));
+  }
+
+  _createClass(CartInCatalog, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          _cart_context2.default.Consumer,
+          null,
+          function (_ref) {
+            var cart = _ref.cart;
+
+            return _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement(
+                'div',
+                { style: cartStyle },
+                '\u0422\u043E\u0432\u0430\u0440\u043E\u0432 \u0432 \u043A\u043E\u0440\u0437\u0438\u043D\u0435: ',
+                cart.length
+              )
+            );
+          }
+        )
+      );
+    }
+  }]);
+
+  return CartInCatalog;
+}(_react.Component);
+
+exports.default = CartInCatalog;
+},{"react":"node_modules\\react\\index.js","../context/cart_context":"src\\context\\cart_context.js"}],"index.js":[function(require,module,exports) {
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _menu = require('./src/components/menu');
+
+var _menu2 = _interopRequireDefault(_menu);
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _cart_context = require('./src/context/cart_context');
+
+var _cart_context2 = _interopRequireDefault(_cart_context);
+
+var _reactRouterDom = require('react-router-dom');
+
+var _cartRoute = require('./src/routes/cartRoute');
 
 var _cartRoute2 = _interopRequireDefault(_cartRoute);
 
-var _catalogRoute = require("./src/routes/catalogRoute");
+var _catalogRoute = require('./src/routes/catalogRoute');
 
 var _catalogRoute2 = _interopRequireDefault(_catalogRoute);
 
-var _contactsRoute = require("./src/routes/contactsRoute");
+var _contactsRoute = require('./src/routes/contactsRoute');
 
 var _contactsRoute2 = _interopRequireDefault(_contactsRoute);
 
-var _productRoute = require("./src/routes/productRoute");
+var _productRoute = require('./src/routes/productRoute');
 
 var _productRoute2 = _interopRequireDefault(_productRoute);
+
+var _not_found = require('./src/components/not_found');
+
+var _not_found2 = _interopRequireDefault(_not_found);
+
+var _cart_in_catalog = require('./src/components/cart_in_catalog');
+
+var _cart_in_catalog2 = _interopRequireDefault(_cart_in_catalog);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25058,8 +25186,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-// import { mainPath, catalogPath, contactsPath, productPath } from './src/routes/routes';
-
 
 var routes = [_cartRoute2.default, _catalogRoute2.default, _contactsRoute2.default, _productRoute2.default];
 
@@ -25067,20 +25193,10 @@ var RouteWithSubRoutes = function RouteWithSubRoutes(route) {
   return _react2.default.createElement(_reactRouterDom.Route, {
     path: route.path,
     render: function render(props) {
-      return _react2.default.createElement(route.component, props);
+      return _react2.default.createElement(route.component, _extends({}, props, { routes: route.routes }));
     }
   });
 };
-//
-// const App = () => {
-//   <Router>
-//     <div>
-//       <Switch>
-//
-//       </Switch>
-//     </div>
-//   </Router>
-// }
 
 var App = function (_Component) {
   _inherits(App, _Component);
@@ -25096,7 +25212,7 @@ var App = function (_Component) {
   }
 
   _createClass(App, [{
-    key: "addToCart",
+    key: 'addToCart',
     value: function addToCart(product) {
       var cart = [].concat(_toConsumableArray(this.state.cart));
 
@@ -25110,7 +25226,7 @@ var App = function (_Component) {
       this.setState({ cart: cart });
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
       return _react2.default.createElement(
         _reactRouterDom.BrowserRouter,
@@ -25127,10 +25243,16 @@ var App = function (_Component) {
                   cart: this.state.cart,
                   addToCart: this.addToCart
                 } },
-              routes.map(function (route, i) {
-                return _react2.default.createElement(RouteWithSubRoutes, _extends({
-                  key: i }, route));
-              })
+              _react2.default.createElement(_cart_in_catalog2.default, null),
+              _react2.default.createElement(
+                _reactRouterDom.Switch,
+                null,
+                routes.map(function (route, i) {
+                  return _react2.default.createElement(RouteWithSubRoutes, _extends({
+                    key: i }, route));
+                }),
+                _react2.default.createElement(_reactRouterDom.Route, { component: _not_found2.default })
+              )
             )
           )
         )
@@ -25142,7 +25264,7 @@ var App = function (_Component) {
 }(_react.Component);
 
 _reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('root'));
-},{"react":"node_modules\\react\\index.js","./src/components/catalog":"src\\components\\catalog.js","./src/components/menu":"src\\components\\menu.js","./src/components/cart":"src\\components\\cart.js","react-dom":"node_modules\\react-dom\\index.js","./src/context/cart_context":"src\\context\\cart_context.js","./src/contacts/contacts":"src\\contacts\\contacts.js","./src/context/product_context":"src\\context\\product_context.js","react-router-dom":"node_modules\\react-router-dom\\es\\index.js","./src/routes/cartRoute":"src\\routes\\cartRoute.js","./src/routes/catalogRoute":"src\\routes\\catalogRoute.js","./src/routes/contactsRoute":"src\\routes\\contactsRoute.js","./src/routes/productRoute":"src\\routes\\productRoute.js"}],"..\\AppData\\Roaming\\npm\\node_modules\\parcel-bundler\\src\\builtins\\hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules\\react\\index.js","./src/components/menu":"src\\components\\menu.js","react-dom":"node_modules\\react-dom\\index.js","./src/context/cart_context":"src\\context\\cart_context.js","react-router-dom":"node_modules\\react-router-dom\\es\\index.js","./src/routes/cartRoute":"src\\routes\\cartRoute.js","./src/routes/catalogRoute":"src\\routes\\catalogRoute.js","./src/routes/contactsRoute":"src\\routes\\contactsRoute.js","./src/routes/productRoute":"src\\routes\\productRoute.js","./src/components/not_found":"src\\components\\not_found.js","./src/components/cart_in_catalog":"src\\components\\cart_in_catalog.js"}],"..\\AppData\\Roaming\\npm\\node_modules\\parcel-bundler\\src\\builtins\\hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -25171,7 +25293,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '49216' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '50637' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

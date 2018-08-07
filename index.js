@@ -51,12 +51,14 @@ class App extends Component {
               addToCart: this.addToCart,
             }}>
               <CartInCatalog />
-              {routes.map((route, i) =>
-                <RouteWithSubRoutes
-                  key={i} {...route}
-                />
-              )}
-              <Route path="*" component={NotFound} />
+              <Switch>
+                  {routes.map((route, i) =>
+                    <RouteWithSubRoutes
+                      key={i} {...route}
+                    />
+                  )}
+                  <Route component={NotFound} />
+              </Switch>
             </CartContext.Provider>
           </Menu>
          </Switch>
